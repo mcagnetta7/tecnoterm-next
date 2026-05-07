@@ -1,0 +1,17 @@
+# Robots.txt per Tecnoterm Molfetta
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.next/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://tecnoterm.it/sitemap.xml
+
+# Google Search Console
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
