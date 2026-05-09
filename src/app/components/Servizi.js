@@ -45,7 +45,7 @@ export default function Servizi() {
             <div className="text-center">
               <a
                 href="/assistenza"
-                className="inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-2 rounded transition"
+                className="inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-300 hover:to-cyan-500 text-white font-semibold px-6 py-2 rounded hover:scale-105 transition duration-300 transform"
               >
                 Scopri di più
               </a>

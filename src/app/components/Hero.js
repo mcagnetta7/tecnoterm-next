@@ -35,7 +35,7 @@ Dalla fase di sopralluogo all’assistenza post-installazione, garantiamo qualit
         </p>
         <a
           href="#contatti"
-          className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-semibold shadow-lg hover:from-yellow-300 hover:to-orange-400 transition duration-300"
+          className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-cyan-600 text-white font-semibold hover:scale-105 transition duration-300 transform"
         >
           Contattaci ora
         </a>

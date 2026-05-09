@@ -140,7 +140,7 @@ export default function Recensioni() {
                 ref={buttonRef}
                 type="button"
                 onClick={() => setIsPanelOpen((s) => !s)}
-                className="inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-3 py-1.5 rounded transition text-xs md:text-sm"
+                className="inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-300 hover:to-cyan-500 text-white font-semibold px-3 py-1.5 rounded hover:scale-105 transition duration-300 transform text-xs md:text-sm"
               >
                 Lascia la tua recensione
               </button>
@@ -202,9 +202,7 @@ export default function Recensioni() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`px-3 py-1.5 rounded bg-amber-500 text-slate-900 font-semibold hover:bg-amber-600 transition ${
-                          isSubmitting ? "opacity-60 cursor-not-allowed" : ""
-                        } text-xs`}
+                        className={`px-3 py-1.5 rounded bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-300 hover:to-cyan-500 text-white font-semibold hover:scale-105 transition duration-300 transform ${isSubmitting ? "opacity-60 cursor-not-allowed" : ""} text-xs`}
                       >
                         {isSubmitting ? "Invio..." : "Pubblica"}
                       </button>
