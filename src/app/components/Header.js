@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaHome } from "react-icons/fa";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -67,9 +68,9 @@ export default function Header() {
 
           {/* Navigazione */}
           <nav className="flex items-center justify-center">
-            <a href="/" aria-label="Home" className="px-3 py-2 text-white hover:text-white/70 transition">
+            <Link href="/" aria-label="Home" className="px-3 py-2 text-white hover:text-white/70 transition">
               <FaHome className="text-lg" />
-            </a>
+            </Link>
             <a href="/chi-siamo" className={navLinkClass(isChiSiamo)}>Chi siamo</a>
             <a href="/contatti" className={navLinkClass(false)}>I nostri contatti</a>
 
@@ -110,9 +111,9 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-slate-200 shadow-lg">
           <nav className="flex flex-col px-6 py-4 gap-1 max-w-xl mx-auto">
-            <a href="/" onClick={() => setIsMobileMenuOpen(false)} className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 border-b border-slate-100 flex items-center gap-2 transition">
+            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 border-b border-slate-100 flex items-center gap-2 transition">
               <FaHome /> Home
-            </a>
+            </Link>
             <a
               href="/chi-siamo"
               className={`py-2.5 text-sm font-medium border-b border-slate-100 transition ${isChiSiamo ? 'text-cyan-600 font-semibold' : 'text-slate-700 hover:text-cyan-600'}`}

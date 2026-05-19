@@ -66,7 +66,7 @@ ${form.messaggio}
           onClick={() => { setInviato(false); setForm({ nome: "", telefono: "", email: "", servizio: "", messaggio: "" }); }}
           className="mt-2 text-sm text-slate-400 hover:text-white transition underline"
         >
-          Invia un'altra richiesta
+          Invia un&apos;altra richiesta
         </button>
       </div>
     );

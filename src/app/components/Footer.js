@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
@@ -22,10 +23,10 @@ export default function Footer() {
             Link Rapidi
           </h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="/" className="hover:text-cyan-400 transition">Home</a></li>
-            <li><a href="/chi-siamo" className="hover:text-cyan-400 transition">Chi siamo</a></li>
-            <li><a href="/assistenza" className="hover:text-cyan-400 transition">Assistenza</a></li>
-            <li><a href="/#contatti" className="hover:text-cyan-400 transition">Contatti</a></li>
+            <li><Link href="/" className="hover:text-cyan-400 transition">Home</Link></li>
+            <li><Link href="/chi-siamo" className="hover:text-cyan-400 transition">Chi siamo</Link></li>
+            <li><Link href="/assistenza" className="hover:text-cyan-400 transition">Assistenza</Link></li>
+            <li><Link href="/#contatti" className="hover:text-cyan-400 transition">Contatti</Link></li>
           </ul>
         </div>
 
