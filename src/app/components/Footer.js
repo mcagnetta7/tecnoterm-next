@@ -1,25 +1,98 @@
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f4f4f4] text-slate-800 py-6 px-6 md:px-12 text-center">
-      <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto space-y-4 md:space-y-0">
-        {/* COPYRIGHT */}
-        <p className="text-sm">
-          © {new Date().getFullYear()} TECNOTERM di Ciccia Antonio. Tutti i diritti riservati.
-        </p>
+    <footer className="bg-slate-900 text-slate-300">
+      {/* Contenuto principale */}
+      <div className="max-w-6xl mx-auto px-6 md:px-10 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-        {/* SOCIAL */}
-        <div className="flex space-x-4 text-lg text-slate-700">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition">
-            <FaFacebookF />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500 transition">
-            <FaInstagram />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition">
-            <FaLinkedinIn />
-          </a>
+        {/* Brand */}
+        <div>
+          <h3 className="text-white font-extrabold text-xl mb-3 tracking-tight">
+            <span className="text-cyan-400">Tecno</span>term
+          </h3>
+          <p className="text-sm leading-relaxed text-slate-400">
+            Soluzioni professionali per riscaldamento e climatizzazione da oltre 25 anni.
+          </p>
+        </div>
+
+        {/* Link rapidi */}
+        <div>
+          <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+            Link Rapidi
+          </h4>
+          <ul className="space-y-2 text-sm">
+            <li><a href="/" className="hover:text-cyan-400 transition">Home</a></li>
+            <li><a href="/chi-siamo" className="hover:text-cyan-400 transition">Chi siamo</a></li>
+            <li><a href="/assistenza" className="hover:text-cyan-400 transition">Assistenza</a></li>
+            <li><a href="/#contatti" className="hover:text-cyan-400 transition">Contatti</a></li>
+          </ul>
+        </div>
+
+        {/* Contatti */}
+        <div>
+          <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+            Contatti
+          </h4>
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-start gap-2">
+              <FaMapMarkerAlt className="text-red-400 mt-0.5 shrink-0" />
+              <span>Piazza Aldo Moro, 3<br />70056 Molfetta (BA)</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <FaPhoneAlt className="text-cyan-400 shrink-0" />
+              <a href="tel:0803352600" className="hover:text-cyan-400 transition">080 3352600</a>
+            </li>
+            <li className="flex items-center gap-2">
+              <FaEnvelope className="text-blue-400 shrink-0" />
+              <a href="mailto:tecnotermciccia@libero.it" className="hover:text-cyan-400 transition break-all">
+                tecnotermciccia@libero.it
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Social */}
+        <div>
+          <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+            Seguici
+          </h4>
+          <div className="flex gap-4 text-lg">
+            <a
+              href="https://www.facebook.com/TecnotermMolfetta"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="text-slate-400 hover:text-blue-400 transition hover:scale-110 transform"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://www.instagram.com/tecnoterm_dicicciaantonio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-slate-400 hover:text-pink-400 transition hover:scale-110 transform"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/tecnoterm-di-ciccia-antonio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-slate-400 hover:text-blue-500 transition hover:scale-110 transform"
+            >
+              <FaLinkedinIn />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Divider + bottom bar */}
+      <div className="border-t border-slate-700">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} Tecnoterm di Ciccia Antonio. Tutti i diritti riservati.</p>
         </div>
       </div>
     </footer>
