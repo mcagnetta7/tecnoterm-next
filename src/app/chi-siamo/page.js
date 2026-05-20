@@ -28,12 +28,16 @@ export default function ChiSiamoPage() {
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
-              Da oltre tre decenni, Tecnoterm rappresenta un punto di riferimento nel settore del
-              riscaldamento e della climatizzazione a Molfetta e dintorni. La nostra non è solo
-              un&apos;azienda, ma un percorso familiare fatto di dedizione, aggiornamento continuo e
-              un profondo legame con il territorio. Ogni generazione ha aggiunto un tassello
-              fondamentale, trasformando una piccola bottega artigiana in una realtà strutturata e
-              all&apos;avanguardia.
+              Da decenni il nostro nome è legato al mondo degli impianti termici, idrici e della
+              climatizzazione a Molfetta. Una tradizione familiare che nel tempo è cresciuta, si è
+              evoluta e ha saputo adattarsi ai cambiamenti senza mai perdere ciò che conta davvero:
+              la serietà del lavoro fatto bene, il rapporto umano con le persone e la voglia di
+              migliorarsi ogni giorno.
+            </p>
+            <p className="text-lg md:text-xl text-slate-700 leading-relaxed mt-6">
+              Dietro Tecnoterm non c&apos;è soltanto un&apos;azienda, ma una famiglia che da anni
+              vive questo mestiere con dedizione, trasformando esperienza e competenza in un punto
+              di riferimento per il territorio.
             </p>
           </div>
         </section>
@@ -60,16 +64,22 @@ export default function ChiSiamoPage() {
                 </h2>
                 <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
                   <p>
-                    Tutto ha inizio con Vincenzo, un uomo dalla straordinaria manualità e
-                    dall&apos;intuito tecnico fuori dal comune. Dopo anni di dura esperienza in
-                    Germania, dove ha appreso il rigore e la precisione teutonica, torna in Italia
-                    portando con sé un bagaglio di conoscenze inestimabile.
+                    Tutto inizia con Vincenzo, un abile saldatore che, in anni in cui il futuro si
+                    costruiva con coraggio e sacrificio, decide di trasferirsi in Germania per fare
+                    fortuna. Lì lavora tra cantieri, officine e grandi impianti industriali,
+                    perfezionando un mestiere fatto di precisione, tecnica ed esperienza. Quando
+                    successivamente arriva a Molfetta, porta con sé non solo competenze avanzate
+                    per quei tempi, ma anche una mentalità innovativa e una grande cultura del
+                    lavoro.
                   </p>
                   <p>
-                    È lui a introdurre sul territorio le prime caldaie Sylber, diventando un
-                    pioniere dell&apos;assistenza tecnica specializzata. La sua officina diventa
-                    presto un punto di riferimento per chi cerca non solo una riparazione, ma una
-                    soluzione duratura e affidabile.
+                    Negli anni contribuisce alla realizzazione di impianti per abitazioni, attività
+                    commerciali e strutture importanti del territorio, diventando un professionista
+                    conosciuto e rispettato. Tra i primi a credere nell&apos;evoluzione del
+                    riscaldamento moderno, introduce e installa le prime caldaie a metano Sylber,
+                    marchio di cui ancora oggi Tecnoterm è centro assistenza tecnica autorizzato.
+                    La sua officina diventa negli anni un punto di riferimento, dove passione
+                    artigianale, esperienza e affidabilità si incontrano ogni giorno.
                   </p>
                 </div>
               </div>
@@ -90,16 +100,28 @@ export default function ChiSiamoPage() {
                 </h2>
                 <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
                   <p>
-                    Antonio raccoglie il testimone del padre Vincenzo e porta Tecnoterm nel nuovo
-                    millennio. Con una visione moderna e un costante aggiornamento professionale,
-                    espande l&apos;offerta di servizi abbracciando le nuove tecnologie di
-                    climatizzazione e risparmio energetico.
+                    Da questa eredità cresce Antonio, che fin da giovane dimostra grande
+                    determinazione e una naturale predisposizione per il mestiere. Impara
+                    rapidamente il lavoro sul campo, vivendo giornate intere tra installazioni,
+                    manutenzioni e assistenze tecniche, costruendo esperienza direttamente accanto
+                    al padre. Con il tempo, grazie alla passione e alla volontà di creare qualcosa
+                    di suo, a luglio del 1999 fonda Tecnoterm.
                   </p>
                   <p>
-                    Sotto la sua guida, l&apos;azienda costruisce partnership solide con i migliori
-                    brand del settore — da Daikin a Ariston — e rafforza la propria presenza nel
-                    territorio pugliese, diventando un punto di riferimento riconosciuto per
-                    qualità e professionalità.
+                    Anno dopo anno, con sacrificio, impegno e costanza, Antonio trasforma
+                    l&apos;azienda in una realtà solida e stimata a Molfetta e nei dintorni.
+                    Tecnoterm cresce, amplia i propri servizi e diventa sinonimo di professionalità
+                    nel settore degli impianti termici, idrici e della climatizzazione. Dalle
+                    installazioni alle manutenzioni, dall&apos;assistenza tecnica specializzata ai
+                    montaggi più complessi, ogni intervento viene affrontato con attenzione,
+                    serietà e rispetto per il cliente.
+                  </p>
+                  <p>
+                    Nel tempo arrivano grandi soddisfazioni: collaborazioni importanti, lavori
+                    realizzati con successo e soprattutto la fiducia di intere generazioni di
+                    clienti che ancora oggi continuano ad affidarsi all&apos;azienda. Un rapporto
+                    costruito negli anni grazie alla qualità del lavoro e alla presenza costante
+                    sul territorio.
                   </p>
                 </div>
               </div>
@@ -138,10 +160,19 @@ export default function ChiSiamoPage() {
                 </h2>
                 <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
                   <p>
-                    Oggi, Alessandro guida l&apos;azienda verso le sfide del domani. Con un forte
-                    focus sull&apos;innovazione tecnologica, l&apos;efficienza energetica e la
-                    digitalizzazione dei servizi, Tecnoterm continua a evolversi mantenendo salde
-                    le radici e i valori familiari.
+                    Oggi questa storia continua con Alessandro, la terza generazione. Cresciuto
+                    respirando fin da piccolo l&apos;atmosfera dell&apos;azienda, tra utensili,
+                    officina e cantieri, sta imparando ogni giorno il mestiere con entusiasmo,
+                    umiltà e voglia di migliorarsi continuamente. Accanto all&apos;esperienza
+                    tramandata dalla famiglia, porta con sé una visione giovane e moderna, attenta
+                    all&apos;innovazione e all&apos;evoluzione del settore.
+                  </p>
+                  <p>
+                    L&apos;obiettivo è continuare a far crescere Tecnoterm, mantenendo vivi i
+                    valori che hanno reso questa realtà ciò che è oggi: passione, affidabilità,
+                    professionalità e legame con il territorio. Perché dietro ogni impianto, ogni
+                    assistenza e ogni intervento, c&apos;è una storia di famiglia che continua da
+                    generazioni e guarda ancora al futuro con la stessa determinazione di sempre.
                   </p>
                 </div>
               </div>
