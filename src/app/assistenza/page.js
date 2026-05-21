@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Image from "next/image";
@@ -11,9 +13,13 @@ import {
   FaLeaf,
   FaPhoneAlt,
   FaWhatsapp,
-  FaSearchPlus,
-  FaTimes,
   FaFilePdf,
+  FaTimes,
+  FaShieldAlt,
+  FaCertificate,
+  FaTools,
+  FaAward,
+  FaChevronDown,
 } from "react-icons/fa";
 
 /* ─── Categorie filtro ─────────────────────────────────── */
@@ -47,170 +53,111 @@ const TAG_STYLE = {
 const PRODOTTI = [
   /* Pompe di calore */
   {
-    name: "Vega M",
-    brand: "Sylber",
-    categoria: "pompe",
-    catLabel: "Pompa di calore",
-    tags: [],
+    name: "Vega M",        brand: "Sylber", categoria: "pompe",
+    catLabel: "Pompa di calore", tags: [],
     desc: "Pompa di calore aria-acqua ad alta efficienza, ideale per riscaldamento e raffrescamento residenziale.",
-    image: "/pompa-sylber.jpeg",
-    Icon: FaLeaf,
+    image: "/pompa-sylber.jpeg", Icon: FaLeaf,
     datasheet: "https://www.sylber.it/prodotti/pompe-calore",
   },
   {
-    name: "HP.QOR",
-    brand: "Unical",
-    categoria: "pompe",
-    catLabel: "Pompa di calore",
-    tags: [],
+    name: "HP.QOR",        brand: "Unical", categoria: "pompe",
+    catLabel: "Pompa di calore", tags: [],
     desc: "Pompa di calore split con tecnologia inverter per massima resa in tutte le stagioni.",
-    image: "/pompa-unical-1.jpeg",
-    Icon: FaLeaf,
+    image: "/pompa-unical-1.jpeg", Icon: FaLeaf,
     datasheet: "https://www.unicalag.it/upload/blocchi/X4979allegatoDATI_TECNICI1-1X_hp_qor_07-2024_it.pdf",
   },
   {
-    name: "HP.OWER",
-    brand: "Unical",
-    categoria: "pompe",
-    catLabel: "Pompa di calore",
-    tags: [],
+    name: "HP.OWER",       brand: "Unical", categoria: "pompe",
+    catLabel: "Pompa di calore", tags: [],
     desc: "Soluzione monoblock compatta ad alta efficienza energetica, semplice da installare.",
-    image: "/pompa-unical-2.jpeg",
-    Icon: FaLeaf,
+    image: "/pompa-unical-2.jpeg", Icon: FaLeaf,
     datasheet: "https://www.unicalag.it/upload/blocchi/X4028allegatoDATI_TECNICI1-1X_hp_ower-one-r_05-2025_it.pdf",
   },
-
   /* Scaldabagni */
   {
-    name: "HP 200P",
-    brand: "Unical",
-    categoria: "scaldabagni",
-    catLabel: "Scaldabagno",
-    tags: ["Elettrico", "Pompa di calore"],
+    name: "HP 200P",       brand: "Unical", categoria: "scaldabagni",
+    catLabel: "Scaldabagno", tags: ["Elettrico", "Pompa di calore"],
     desc: "Scaldabagno a pompa di calore da 200 litri: fino al 70% di risparmio rispetto al boiler elettrico tradizionale.",
-    image: null,
-    Icon: FaWater,
+    image: null, Icon: FaWater,
     datasheet: "https://www.unicalag.it/prodotti/scaldacqua",
   },
   {
-    name: "Devyl",
-    brand: "Sylber",
-    categoria: "scaldabagni",
-    catLabel: "Scaldabagno",
-    tags: ["Metano"],
+    name: "Devyl",         brand: "Sylber", categoria: "scaldabagni",
+    catLabel: "Scaldabagno", tags: ["Metano"],
     desc: "Scaldabagno a gas a camera aperta, affidabile e dal rapido riscaldamento dell'acqua.",
-    image: null,
-    Icon: FaWater,
+    image: null, Icon: FaWater,
     datasheet: "https://www.sylber.it/prodotti/scaldabagni",
   },
   {
-    name: "Artù",
-    brand: "Sylber",
-    categoria: "scaldabagni",
-    catLabel: "Scaldabagno",
-    tags: ["Metano"],
+    name: "Artù",          brand: "Sylber", categoria: "scaldabagni",
+    catLabel: "Scaldabagno", tags: ["Metano"],
     desc: "Scaldabagno a gas a camera stagna con scarico forzato, sicuro e adatto a qualsiasi ambiente.",
-    image: null,
-    Icon: FaWater,
+    image: null, Icon: FaWater,
     datasheet: "https://www.sylber.it/prodotti/scaldabagni",
   },
-
   /* Caldaie */
   {
-    name: "Style 25C",
-    brand: "Sylber",
-    categoria: "caldaie",
-    catLabel: "Caldaia",
-    tags: [],
+    name: "Style 25C",     brand: "Sylber", categoria: "caldaie",
+    catLabel: "Caldaia", tags: [],
     desc: "Caldaia murale a condensazione con design elegante e tecnologia a basse emissioni NOx.",
-    image: "/caldaia-sylber.jpeg",
-    Icon: FaFire,
+    image: "/caldaia-sylber.jpeg", Icon: FaFire,
     datasheet: "https://www.sylber.it/prodotti/caldaie",
   },
   {
-    name: "Linea K35B",
-    brand: "Sylber",
-    categoria: "caldaie",
-    catLabel: "Caldaia",
-    tags: [],
+    name: "Linea K35B",    brand: "Sylber", categoria: "caldaie",
+    catLabel: "Caldaia", tags: [],
     desc: "Caldaia a condensazione da 35 kW, ideale per abitazioni di medie e grandi dimensioni.",
-    image: "/caldaia-sylber.jpeg",
-    Icon: FaFire,
+    image: "/caldaia-sylber.jpeg", Icon: FaFire,
     datasheet: "https://www.sylber.it/prodotti/caldaie",
   },
   {
-    name: "EK!+24",
-    brand: "Unical",
-    categoria: "caldaie",
-    catLabel: "Caldaia",
-    tags: [],
+    name: "EK!+24",        brand: "Unical", categoria: "caldaie",
+    catLabel: "Caldaia", tags: [],
     desc: "Caldaia murale a condensazione con interfaccia intuitiva e alto rendimento stagionale.",
-    image: "/caldaia-unical.jpeg",
-    Icon: FaFire,
+    image: "/caldaia-unical.jpeg", Icon: FaFire,
     datasheet: "https://www.unicalag.it/prodotti/caldaie",
   },
   {
-    name: "X+C24",
-    brand: "Unical",
-    categoria: "caldaie",
-    catLabel: "Caldaia",
-    tags: [],
+    name: "X+C24",         brand: "Unical", categoria: "caldaie",
+    catLabel: "Caldaia", tags: [],
     desc: "Caldaia a condensazione combinata per riscaldamento e produzione istantanea di acqua calda sanitaria.",
-    image: "/caldaia-unical.jpeg",
-    Icon: FaFire,
+    image: "/caldaia-unical.jpeg", Icon: FaFire,
     datasheet: "https://www.unicalag.it/prodotti/caldaie",
   },
-
   /* Climatizzatori */
   {
-    name: "YA3",
-    brand: "Unical",
-    categoria: "climatizzatori",
-    catLabel: "Climatizzatore",
-    tags: ["+++A"],
+    name: "YA3",           brand: "Unical", categoria: "climatizzatori",
+    catLabel: "Climatizzatore", tags: ["+++A"],
     desc: "Climatizzatore inverter di classe A+++, silenzioso e potente per il massimo comfort.",
-    image: null,
-    Icon: FaSnowflake,
+    image: null, Icon: FaSnowflake,
     datasheet: "https://www.unicalag.it/prodotti/climatizzatori",
   },
   {
-    name: "KMUN10-13",
-    brand: "Unical",
-    categoria: "climatizzatori",
-    catLabel: "Climatizzatore",
-    tags: ["ECO"],
+    name: "KMUN10-13",     brand: "Unical", categoria: "climatizzatori",
+    catLabel: "Climatizzatore", tags: ["ECO"],
     desc: "Linea ECO a basso consumo energetico con refrigerante R32 a ridotto impatto ambientale.",
-    image: null,
-    Icon: FaSnowflake,
+    image: null, Icon: FaSnowflake,
     datasheet: "https://www.unicalag.it/prodotti/climatizzatori",
   },
   {
-    name: "AOHH12KNCA",
-    brand: "General",
-    categoria: "climatizzatori",
-    catLabel: "Climatizzatore",
-    tags: ["Unità esterna"],
+    name: "AOHH12KNCA",   brand: "General", categoria: "climatizzatori",
+    catLabel: "Climatizzatore", tags: ["Unità esterna"],
     desc: "Unità esterna ad alta efficienza della serie HH, compatibile con sistema multi-split.",
-    image: "/condizionatore-fujitsu.jpeg",
-    Icon: FaSnowflake,
+    image: "/condizionatore-fujitsu.jpeg", Icon: FaSnowflake,
     datasheet: "https://www.fujitsu-general.com/eu/it/products/",
   },
   {
-    name: "ASHH12KNCA",
-    brand: "General",
-    categoria: "climatizzatori",
-    catLabel: "Climatizzatore",
-    tags: ["Unità interna"],
+    name: "ASHH12KNCA",   brand: "General", categoria: "climatizzatori",
+    catLabel: "Climatizzatore", tags: ["Unità interna"],
     desc: "Unità interna della serie HH con design ultra-sottile e funzione self-cleaning integrata.",
-    image: "/condizionatore-fujitsu.jpeg",
-    Icon: FaSnowflake,
+    image: "/condizionatore-fujitsu.jpeg", Icon: FaSnowflake,
     datasheet: "https://www.fujitsu-general.com/eu/it/products/",
   },
 ];
 
 const BRAND_LOGOS = [
-  { name: "Sylber",  src: "/sylber-logo.jpg",    url: "https://www.sylber.it"          },
-  { name: "Unical",  src: "/unical-logo.jpeg",   url: "https://www.unicalag.it"        },
+  { name: "Sylber",  src: "/sylber-logo.jpg",     url: "https://www.sylber.it"                  },
+  { name: "Unical",  src: "/unical-logo.jpeg",    url: "https://www.unicalag.it"                },
   { name: "General", src: "/genfujitsu-logo.png", url: "https://www.fujitsu-general.com/eu/it/" },
 ];
 
@@ -221,28 +168,18 @@ function ProductCard({ name, brand, catLabel, tags, desc, image, Icon, datasheet
   return (
     <div className="bg-slate-800 rounded-2xl overflow-hidden shadow-md flex flex-col border border-slate-700/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-400/10 transition-all duration-300">
 
-      {/* Immagine prodotto */}
-      <div className="relative bg-slate-700 h-52 flex items-center justify-center overflow-hidden">
+      {/* Immagine */}
+      <div
+        className={`relative bg-slate-700 h-52 flex items-center justify-center overflow-hidden ${image ? "cursor-zoom-in group" : ""}`}
+        onClick={() => image && onExpand(image, `${brand} ${name}`)}
+      >
         {image ? (
           <>
-            <Image
-              src={image}
-              alt={`${brand} ${name}`}
-              fill
-              className="object-contain p-4"
-            />
-            {/* Pulsante ingrandisci */}
-            <button
-              onClick={() => onExpand(image, `${brand} ${name}`)}
-              className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition opacity-0 group-hover:opacity-100"
-              aria-label="Ingrandisci immagine"
-            >
-              <FaSearchPlus className="text-sm" />
-            </button>
-            <div className="absolute inset-0 group cursor-zoom-in" onClick={() => onExpand(image, `${brand} ${name}`)}>
-              <div className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition">
-                <FaSearchPlus className="text-sm" />
-              </div>
+            <Image src={image} alt={`${brand} ${name}`} fill className="object-contain p-4" />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+              <span className="text-white text-sm font-medium opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/50 px-3 py-1.5 rounded-full">
+                Ingrandisci
+              </span>
             </div>
           </>
         ) : (
@@ -254,7 +191,6 @@ function ProductCard({ name, brand, catLabel, tags, desc, image, Icon, datasheet
 
       {/* Corpo */}
       <div className="p-5 flex flex-col gap-3 flex-1">
-        {/* Brand + categoria */}
         <div className="flex items-center justify-between gap-2">
           <span className="text-xs text-slate-400 uppercase tracking-wider">{catLabel}</span>
           <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${bc.bg} ${bc.text} ${bc.border}`}>
@@ -262,10 +198,8 @@ function ProductCard({ name, brand, catLabel, tags, desc, image, Icon, datasheet
           </span>
         </div>
 
-        {/* Nome */}
         <h3 className="text-white font-bold text-xl leading-snug">{name}</h3>
 
-        {/* Tag */}
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5">
             {tags.map((t) => {
@@ -279,10 +213,8 @@ function ProductCard({ name, brand, catLabel, tags, desc, image, Icon, datasheet
           </div>
         )}
 
-        {/* Descrizione */}
         <p className="text-slate-400 text-sm leading-relaxed flex-1">{desc}</p>
 
-        {/* Scheda tecnica */}
         {datasheet && (
           <a
             href={datasheet}
@@ -319,12 +251,7 @@ function ImageModal({ src, alt, onClose }) {
           <FaTimes />
         </button>
         <div className="relative w-full h-[60vh]">
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            className="object-contain rounded-xl"
-          />
+          <Image src={src} alt={alt} fill className="object-contain rounded-xl" />
         </div>
         <p className="text-center text-slate-400 text-sm mt-3">{alt}</p>
       </div>
@@ -332,15 +259,118 @@ function ImageModal({ src, alt, onClose }) {
   );
 }
 
-/* ─── Pagina ─────────────────────────────────────────────── */
-export default function AssistenzaPage() {
-  const [attiva, setAttiva] = useState("tutte");
+/* ─── Contenuto principale (legge searchParams) ─────────── */
+function AssistenzaContent() {
+  const searchParams = useSearchParams();
+  const [attiva, setAttiva] = useState(() => searchParams.get("cat") || "tutte");
   const [modal, setModal] = useState({ src: null, alt: "" });
+
+  // Sincronizza se l'URL cambia (es. navigazione da menu)
+  useEffect(() => {
+    const cat = searchParams.get("cat");
+    setAttiva(cat || "tutte");
+  }, [searchParams]);
 
   const prodottiFiltrati = attiva === "tutte"
     ? PRODOTTI
     : PRODOTTI.filter((p) => p.categoria === attiva);
 
+  return (
+    <>
+      {/* Catalogo */}
+      <section className="py-16 md:py-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
+
+          {/* Filtri */}
+          <div className="flex flex-wrap gap-2 justify-center mb-12">
+            {CATEGORIE.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => setAttiva(id)}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition duration-200 ${
+                  attiva === id
+                    ? "bg-cyan-500 text-white shadow-md shadow-cyan-400/30"
+                    : "bg-white text-slate-600 border border-slate-200 hover:border-cyan-400 hover:text-cyan-600"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {/* Griglia */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {prodottiFiltrati.map((p) => (
+              <ProductCard
+                key={`${p.brand}-${p.name}`}
+                {...p}
+                onExpand={(src, alt) => setModal({ src, alt })}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Modal */}
+      <ImageModal
+        src={modal.src}
+        alt={modal.alt}
+        onClose={() => setModal({ src: null, alt: "" })}
+      />
+    </>
+  );
+}
+
+/* ─── FAQ ───────────────────────────────────────────────── */
+const FAQ_ITEMS = [
+  {
+    q: "Con quale frequenza va revisionata la caldaia?",
+    a: "La normativa italiana prevede la manutenzione annuale obbligatoria per le caldaie a gas. Una revisione periodica garantisce il corretto funzionamento, riduce i consumi e previene guasti o situazioni di pericolo.",
+  },
+  {
+    q: "Fate preventivi gratuiti?",
+    a: "Sì, i preventivi sono gratuiti e senza impegno. Puoi contattarci telefonicamente, via WhatsApp o tramite il modulo nella pagina Contatti: valutiamo la tua situazione e ti proponiamo la soluzione più adatta.",
+  },
+  {
+    q: "Intervenite anche in caso di guasto urgente?",
+    a: "Sì, gestiamo anche interventi urgenti. Contattaci il prima possibile al numero 080 3352600 o via WhatsApp e organizziamo l'intervento nei tempi più brevi disponibili.",
+  },
+  {
+    q: "Quali zone coprite?",
+    a: "Operiamo principalmente a Molfetta e nei comuni limitrofi della provincia di Bari. Per interventi fuori zona, valutare caso per caso: contattaci per verificare la fattibilità.",
+  },
+  {
+    q: "I ricambi utilizzati sono originali?",
+    a: "Utilizziamo esclusivamente ricambi originali dei marchi che trattiamo (Sylber, Unical, General). Questo garantisce la durata nel tempo dell'intervento e mantiene valida la garanzia del produttore.",
+  },
+  {
+    q: "Installate anche impianti nuovi o solo assistenza?",
+    a: "Ci occupiamo di tutto il ciclo: progettazione, installazione, collaudo e manutenzione di impianti termici, idrici, di climatizzazione e pompe di calore, sia in nuove costruzioni che in ristrutturazioni.",
+  },
+];
+
+function FaqItem({ q, a }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border border-slate-200 rounded-2xl overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-slate-50 transition"
+      >
+        <span className="font-semibold text-slate-800 text-sm md:text-base">{q}</span>
+        <FaChevronDown
+          className={`shrink-0 text-cyan-500 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96" : "max-h-0"}`}>
+        <p className="px-6 pb-5 text-slate-600 text-sm leading-relaxed">{a}</p>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Pagina ─────────────────────────────────────────────── */
+export default function AssistenzaPage() {
   return (
     <>
       <Header />
@@ -391,35 +421,77 @@ export default function AssistenzaPage() {
           </div>
         </section>
 
-        {/* Catalogo */}
-        <section className="py-16 md:py-24 bg-slate-50">
-          <div className="max-w-6xl mx-auto px-6">
+        {/* Certificazioni */}
+        <section className="py-14 bg-slate-50 border-b border-slate-200">
+          <div className="max-w-5xl mx-auto px-6">
+            <p className="text-center text-xs text-slate-400 uppercase tracking-widest mb-10 font-semibold">
+              Certificazioni e abilitazioni
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-            {/* Filtri */}
-            <div className="flex flex-wrap gap-2 justify-center mb-12">
-              {CATEGORIE.map(({ id, label }) => (
-                <button
-                  key={id}
-                  onClick={() => setAttiva(id)}
-                  className={`px-5 py-2 rounded-full text-sm font-semibold transition duration-200 ${
-                    attiva === id
-                      ? "bg-cyan-500 text-white shadow-md shadow-cyan-400/30"
-                      : "bg-white text-slate-600 border border-slate-200 hover:border-cyan-400 hover:text-cyan-600"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center">
+                  <FaShieldAlt className="text-2xl text-cyan-500" />
+                </div>
+                <h3 className="font-bold text-slate-800 text-sm leading-snug">Patentino F-Gas</h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Abilitazione Cat. I per la gestione e manipolazione dei gas fluorurati (Reg. UE 517/2014).
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center">
+                  <FaAward className="text-2xl text-orange-400" />
+                </div>
+                <h3 className="font-bold text-slate-800 text-sm leading-snug">Centro Assistenza Sylber</h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Tecnico autorizzato per installazione, manutenzione e riparazione dei prodotti Sylber.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                  <FaCertificate className="text-2xl text-blue-500" />
+                </div>
+                <h3 className="font-bold text-slate-800 text-sm leading-snug">Centro Assistenza Unical</h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Tecnico autorizzato per installazione, manutenzione e riparazione dei prodotti Unical.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col items-center text-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                  <FaTools className="text-2xl text-emerald-500" />
+                </div>
+                <h3 className="font-bold text-slate-800 text-sm leading-snug">D.M. 37/2008</h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Abilitazione per progettazione e installazione di impianti termici, idraulici e a gas.
+                </p>
+              </div>
+
             </div>
+          </div>
+        </section>
 
-            {/* Griglia */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-              {prodottiFiltrati.map((p) => (
-                <ProductCard
-                  key={`${p.brand}-${p.name}`}
-                  {...p}
-                  onExpand={(src, alt) => setModal({ src, alt })}
-                />
+        {/* Catalogo + filtri (legge ?cat=) */}
+        <Suspense fallback={null}>
+          <AssistenzaContent />
+        </Suspense>
+
+        {/* FAQ */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-3xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-3">
+                Domande frequenti
+              </h2>
+              <p className="text-slate-500 text-lg">
+                Tutto quello che c&apos;è da sapere prima di contattarci.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3">
+              {FAQ_ITEMS.map((item) => (
+                <FaqItem key={item.q} {...item} />
               ))}
             </div>
           </div>
@@ -458,13 +530,6 @@ export default function AssistenzaPage() {
       </main>
 
       <Footer />
-
-      {/* Modal immagine */}
-      <ImageModal
-        src={modal.src}
-        alt={modal.alt}
-        onClose={() => setModal({ src: null, alt: "" })}
-      />
     </>
   );
 }

@@ -27,7 +27,7 @@ const services = [
     alt: 'Impianti idrici e fognanti - logo',
     title: 'Impianti idrici e fognanti',
     description: 'Realizzazioni e rifacimento impianti termici, idrici e gas',
-    href: '#idrici',
+    href: '/impianti-idrici',
   },
 ];
 

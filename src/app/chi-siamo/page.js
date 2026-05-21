@@ -180,6 +180,59 @@ export default function ChiSiamoPage() {
           </div>
         </section>
 
+        {/* Dove siamo */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-10 text-center">
+              Dove siamo?
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+              {/* Info */}
+              <div className="bg-slate-800 rounded-xl p-8 shadow-lg flex flex-col gap-6">
+                <div className="flex items-start gap-4">
+                  <FaMapMarkerAlt className="text-red-400 text-xl mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-white font-semibold mb-1">Indirizzo</p>
+                    <p className="text-gray-300 text-sm">Piazza Aldo Moro, 3 — 70056 Molfetta (BA)</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <FaClock className="text-yellow-300 text-xl mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-white font-semibold mb-2">Orari di apertura</p>
+                    <div className="text-gray-300 text-sm space-y-1">
+                      <div className="flex justify-between gap-8">
+                        <span>Lunedì – Sabato</span>
+                        <span className="text-cyan-400 font-medium">9:00 – 12:00</span>
+                      </div>
+                      <div className="flex justify-between gap-8">
+                        <span>Lunedì – Venerdì</span>
+                        <span className="text-cyan-400 font-medium">17:00 – 20:00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mappa */}
+              <div className="min-h-[280px]">
+                <iframe
+                  src="https://www.google.com/maps?q=Piazza+Aldo+Moro,+3,+70056+Molfetta+BA&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: '280px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  className="rounded-xl shadow-lg w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         {/* Valori */}
         <section className="py-16 md:py-24 bg-blue-300">
           <div className="max-w-6xl mx-auto px-6">
@@ -260,58 +313,7 @@ export default function ChiSiamoPage() {
           </div>
         </section>
 
-        {/* Dove siamo */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-10 text-center">
-              Dove siamo?
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-              {/* Info */}
-              <div className="bg-slate-800 rounded-xl p-8 shadow-lg flex flex-col gap-6">
-                <div className="flex items-start gap-4">
-                  <FaMapMarkerAlt className="text-red-400 text-xl mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-white font-semibold mb-1">Indirizzo</p>
-                    <p className="text-gray-300 text-sm">Piazza Aldo Moro, 3 — 70056 Molfetta (BA)</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <FaClock className="text-yellow-300 text-xl mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-white font-semibold mb-2">Orari di apertura</p>
-                    <div className="text-gray-300 text-sm space-y-1">
-                      <div className="flex justify-between gap-8">
-                        <span>Lunedì – Sabato</span>
-                        <span className="text-cyan-400 font-medium">9:00 – 12:00</span>
-                      </div>
-                      <div className="flex justify-between gap-8">
-                        <span>Lunedì – Venerdì</span>
-                        <span className="text-cyan-400 font-medium">17:00 – 20:00</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mappa */}
-              <div className="min-h-[280px]">
-                <iframe
-                  src="https://www.google.com/maps?q=Piazza+Aldo+Moro,+3,+70056+Molfetta+BA&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: '280px' }}
-                  allowFullScreen
-                  loading="lazy"
-                  className="rounded-xl shadow-lg w-full h-full"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
+        
         {/* CTA */}
         <section className="py-16 md:py-20 bg-slate-50">
           <div className="max-w-3xl mx-auto px-6 text-center">

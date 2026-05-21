@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaHome } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaHome, FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileAssistenzaOpen, setIsMobileAssistenzaOpen] = useState(false);
   const pathname = usePathname();
   const isChiSiamo = pathname === '/chi-siamo';
 
@@ -15,6 +16,11 @@ export default function Header() {
     `px-4 py-2 text-sm font-semibold text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-white after:transition-all after:duration-300 transition ${
       active ? 'after:w-full bg-white/20 rounded' : 'after:w-0 hover:after:w-full'
     }`;
+
+  const closeMobile = () => {
+    setIsMobileMenuOpen(false);
+    setIsMobileAssistenzaOpen(false);
+  };
 
   return (
     <header className="bg-blue-300 text-white shadow-lg sticky top-0 z-50">
@@ -74,15 +80,36 @@ export default function Header() {
             <a href="/chi-siamo" className={navLinkClass(isChiSiamo)}>Chi siamo</a>
             <a href="/contatti" className={navLinkClass(false)}>I nostri contatti</a>
 
+            {/* Dropdown Servizi */}
             <div className="relative group">
               <button className="px-4 py-2 text-sm font-semibold text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-white after:w-0 group-hover:after:w-full after:transition-all after:duration-300 transition">
                 Servizi
               </button>
-              <div className="absolute left-0 mt-3 w-56 bg-blue-500 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 -translate-y-2 group-hover:translate-y-0">
+
+              {/* Livello 1 */}
+              <div className="absolute left-0 mt-3 w-52 bg-blue-500 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 -translate-y-2 group-hover:translate-y-0 shadow-xl rounded-b-lg">
                 <div className="py-2">
-                  <a href="#climatizzazione" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Impianti climatizzazione</a>
-                  <a href="/assistenza"      className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Assistenza</a>
-                  <a href="#idrici"          className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Impianti idrici</a>
+
+                  {/* Assistenza — con sottomenu */}
+                  <div className="relative group/assistenza">
+                    <div className="flex items-center justify-between px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition cursor-default">
+                      <span>Assistenza</span>
+                      <FaChevronRight className="text-[10px] opacity-70" />
+                    </div>
+
+                    {/* Livello 2 */}
+                    <div className="absolute left-full top-0 w-52 bg-blue-600 opacity-0 invisible group-hover/assistenza:opacity-100 group-hover/assistenza:visible transition-all duration-200 shadow-xl rounded-r-lg rounded-bl-lg">
+                      <div className="py-2">
+                        <Link href="/assistenza?cat=caldaie"        className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Caldaie</Link>
+                        <Link href="/assistenza?cat=scaldabagni"    className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Scaldabagni</Link>
+                        <Link href="/assistenza?cat=pompe"          className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Pompe di calore</Link>
+                        <Link href="/assistenza?cat=climatizzatori" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Climatizzatori</Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Impianti idrici */}
+                  <Link href="/impianti-idrici" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Impianti idrici</Link>
                 </div>
               </div>
             </div>
@@ -111,30 +138,50 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-slate-200 shadow-lg">
           <nav className="flex flex-col px-6 py-4 gap-1 max-w-xl mx-auto">
-            <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 border-b border-slate-100 flex items-center gap-2 transition">
+            <Link href="/" onClick={closeMobile} className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 border-b border-slate-100 flex items-center gap-2 transition">
               <FaHome /> Home
             </Link>
             <a
               href="/chi-siamo"
               className={`py-2.5 text-sm font-medium border-b border-slate-100 transition ${isChiSiamo ? 'text-cyan-600 font-semibold' : 'text-slate-700 hover:text-cyan-600'}`}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={closeMobile}
             >
               Chi siamo
             </a>
-            <a href="/contatti" className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 border-b border-slate-100 transition" onClick={() => setIsMobileMenuOpen(false)}>
+            <a href="/contatti" className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 border-b border-slate-100 transition" onClick={closeMobile}>
               I nostri contatti
             </a>
 
+            {/* Servizi mobile */}
             <div className="border-b border-slate-100">
               <p className="py-2.5 text-sm font-medium text-slate-700">Servizi</p>
               <div className="pl-4 flex flex-col gap-1 pb-2 border-l-2 border-cyan-300">
-                <a href="#climatizzazione" className="py-1 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={() => setIsMobileMenuOpen(false)}>Impianti climatizzazione</a>
-                <a href="/assistenza"      className="py-1 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={() => setIsMobileMenuOpen(false)}>Assistenza</a>
-                <a href="#idrici"          className="py-1 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={() => setIsMobileMenuOpen(false)}>Impianti idrici</a>
+
+                {/* Assistenza con sub-toggle */}
+                <div>
+                  <button
+                    onClick={() => setIsMobileAssistenzaOpen(!isMobileAssistenzaOpen)}
+                    className="w-full flex items-center justify-between py-1.5 text-xs font-medium text-slate-600 hover:text-cyan-600 transition"
+                  >
+                    <span>Assistenza</span>
+                    <FaChevronRight className={`text-[10px] transition-transform duration-200 ${isMobileAssistenzaOpen ? 'rotate-90' : ''}`} />
+                  </button>
+
+                  {isMobileAssistenzaOpen && (
+                    <div className="pl-3 flex flex-col gap-0.5 pb-1 border-l border-cyan-200 ml-1 mt-0.5">
+                      <Link href="/assistenza?cat=caldaie"        className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile}>Caldaie</Link>
+                      <Link href="/assistenza?cat=scaldabagni"    className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile}>Scaldabagni</Link>
+                      <Link href="/assistenza?cat=pompe"          className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile}>Pompe di calore</Link>
+                      <Link href="/assistenza?cat=climatizzatori" className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile}>Climatizzatori</Link>
+                    </div>
+                  )}
+                </div>
+
+                <Link href="/impianti-idrici" className="py-1 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={closeMobile}>Impianti idrici</Link>
               </div>
             </div>
 
-            <a href="/recensioni" className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 transition" onClick={() => setIsMobileMenuOpen(false)}>
+            <a href="/recensioni" className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 transition" onClick={closeMobile}>
               Lascia una recensione
             </a>
           </nav>
