@@ -22,7 +22,16 @@ export default function ContattiPage() {
 
       <main>
         {/* Hero */}
-        <section className="bg-blue-300 py-16 md:py-24">
+        <section className="h-64 md:h-96 overflow-hidden">
+          <img
+            src="/contatti.png"
+            alt="Tecnoterm contatti"
+            className="w-full h-full object-cover object-top"
+          />
+        </section>
+
+        {/* Titolo */}
+        <section className="bg-blue-300 py-10 md:py-14">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h1
               className="text-4xl md:text-5xl font-bold text-white mb-4"

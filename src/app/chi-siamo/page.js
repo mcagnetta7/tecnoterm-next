@@ -326,7 +326,7 @@ export default function ChiSiamoPage() {
               soluzione migliore per le tue esigenze.
             </p>
             <Link
-              href="/#contatti"
+              href="/contatti"
               className="inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-300 hover:to-cyan-500 text-white font-semibold px-8 py-3 rounded transition duration-300"
             >
               Contattaci

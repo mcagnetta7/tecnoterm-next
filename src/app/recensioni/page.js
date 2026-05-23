@@ -28,6 +28,7 @@ export default function RecensioniPage() {
   const [recensioni, setRecensioni] = useState([]);
   const [form, setForm] = useState({ nome: "", testo: "", valutazione: 0 });
   const [stato, setStato] = useState("idle"); // idle | loading | success | error
+  const [visibili, setVisibili] = useState(4);
 
   useEffect(() => {
     fetch("/api/recensioni", { cache: "no-store" })
@@ -167,21 +168,49 @@ export default function RecensioniPage() {
             {recensioni.length === 0 ? (
               <p className="text-center text-slate-400">Ancora nessuna recensione. Sii il primo!</p>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {recensioni.map((r, i) => (
-                  <div
-                    key={i}
-                    className="bg-slate-800 rounded-2xl p-6 shadow-md flex flex-col gap-3"
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-semibold text-white">{r.nome}</span>
-                      <span className="text-xs text-slate-400">{r.data || new Date(r.createdAt).toLocaleDateString("it-IT")}</span>
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {recensioni.slice(0, visibili).map((r, i) => (
+                    <div
+                      key={i}
+                      className="bg-slate-800 rounded-2xl p-6 shadow-md flex flex-col gap-3"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-semibold text-white">{r.nome}</span>
+                        <span className="text-xs text-slate-400">{r.data || new Date(r.createdAt).toLocaleDateString("it-IT")}</span>
+                      </div>
+                      <Stelle valore={r.valutazione} />
+                      <p className="text-slate-300 text-sm leading-relaxed">{r.testo}</p>
                     </div>
-                    <Stelle valore={r.valutazione} />
-                    <p className="text-slate-300 text-sm leading-relaxed">{r.testo}</p>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+
+                <div className="mt-10 flex items-center justify-center gap-6">
+                  {visibili < recensioni.length && (
+                    <button
+                      onClick={() => setVisibili((v) => v + 4)}
+                      className="inline-flex flex-col items-center gap-1.5 text-slate-500 hover:text-cyan-500 transition group"
+                    >
+                      <span className="text-sm font-semibold">Mostra altro</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  )}
+
+                  {visibili > 4 && (
+                    <button
+                      onClick={() => setVisibili(4)}
+                      className="inline-flex flex-col items-center gap-1.5 text-slate-500 hover:text-cyan-500 transition group"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+                      </svg>
+                      <span className="text-sm font-semibold">Mostra meno</span>
+                    </button>
+                  )}
+                </div>
+              </>
             )}
           </div>
         </section>

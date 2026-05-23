@@ -278,7 +278,7 @@ function AssistenzaContent() {
   return (
     <>
       {/* Catalogo */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section id="catalogo" className="py-16 md:py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
 
           {/* Filtri */}

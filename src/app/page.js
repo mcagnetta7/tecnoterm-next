@@ -1,6 +1,13 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Image from 'next/image';
+import {
+  FaWhatsapp,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaClock,
+  FaEnvelope,
+} from 'react-icons/fa';
 
 export const metadata = {
   title: 'Tecnoterm - Impianti e Assistenza Tecnica',
@@ -8,13 +15,6 @@ export const metadata = {
 };
 
 const services = [
-  {
-    logo: '/logofuocoacqua.png',
-    alt: 'Impianti di climatizzazione - logo',
-    title: 'Impianti di climatizzazione invernale/estiva',
-    description: 'Installiamo impianti di climatizzazione per ogni ambiente',
-    href: '#climatizzazione',
-  },
   {
     logo: '/logoattrezzo.png',
     alt: 'Assistenza tecnica - logo',
@@ -38,7 +38,47 @@ export default function Home() {
 
       <main className="flex-1 md:min-h-0 flex flex-col md:overflow-hidden">
 
-        {/* Zona immagine — nascosta su mobile */}
+        {/* ── HERO MOBILE ──────────────────────────────────── */}
+        <div className="md:hidden relative text-center">
+          <img
+            src="/sfondo_mobile.png"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-auto block"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 px-6 pb-8 z-10">
+            <p className="text-white/80 text-xs font-semibold uppercase tracking-widest mb-2">
+              Dal 1999 a Molfetta
+            </p>
+            <h1 className="text-3xl font-extrabold text-white mb-2" style={{ letterSpacing: '-0.02em' }}>
+              Tecnoterm
+            </h1>
+            <p className="text-white/90 text-sm leading-relaxed max-w-xs mx-auto mb-5">
+              Specialisti in impianti termici, idrici e climatizzazione.
+            </p>
+            <div className="flex items-center justify-center gap-3">
+              <a
+                href="tel:0803352600"
+                className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+              >
+                <FaPhoneAlt className="text-xs" />
+                080 3352600
+              </a>
+              <a
+                href="https://wa.me/393487297131"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+              >
+                <FaWhatsapp />
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ── HERO IMAGE DESKTOP ───────────────────────────── */}
         <div className="hidden md:block relative overflow-hidden" style={{ flex: '0 0 65%' }}>
           <img
             src="/sfondoDefinitivo6.png"
@@ -48,29 +88,39 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[80%] to-white pointer-events-none" />
         </div>
 
-        {/* Card servizi */}
+        {/* ── CARDS ────────────────────────────────────────── */}
         <div className="md:flex-1 md:min-h-0 bg-white flex items-center py-6 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto w-full">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5">
+
+            {/* Mobile */}
+            <div className="flex flex-wrap justify-center gap-4 md:hidden">
+              {services.map(({ logo, alt, title, description, href }) => (
+                <a
+                  key={title}
+                  href={href}
+                  className="w-[calc(50%-0.5rem)] bg-slate-700 rounded-2xl p-4 shadow-lg border border-slate-600/40 flex flex-col items-center text-center hover:shadow-cyan-400/40 transition-all duration-300"
+                >
+                  <Image src={logo} alt={alt} width={44} height={44} className="mb-2 object-contain" />
+                  <h2 className="text-xs font-semibold text-white mb-1.5 leading-snug">{title}</h2>
+                  <p className="text-gray-300 text-[11px] leading-relaxed mb-3">{description}</p>
+                  <span className="mt-auto inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 text-white font-semibold px-3 py-1 rounded text-[11px]">
+                    Scopri di più
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            {/* Desktop: 2 colonne centrate */}
+            <div className="hidden md:grid grid-cols-2 gap-4 lg:gap-5 max-w-2xl mx-auto">
               {services.map(({ logo, alt, title, description, href }) => (
                 <a
                   key={title}
                   href={href}
                   className="bg-slate-700 rounded-2xl p-5 shadow-lg border border-slate-600/40 flex flex-col items-center text-center hover:-translate-y-1 hover:shadow-xl hover:shadow-cyan-400/40 transition-all duration-300"
                 >
-                  <Image
-                    src={logo}
-                    alt={alt}
-                    width={55}
-                    height={55}
-                    className="mb-3 object-contain"
-                  />
-                  <h2 className="text-sm lg:text-base font-semibold text-white mb-1.5 leading-snug">
-                    {title}
-                  </h2>
-                  <p className="text-gray-300 text-xs leading-relaxed mb-4 mt-auto">
-                    {description}
-                  </p>
+                  <Image src={logo} alt={alt} width={55} height={55} className="mb-3 object-contain" />
+                  <h2 className="text-sm lg:text-base font-semibold text-white mb-1.5 leading-snug">{title}</h2>
+                  <p className="text-gray-300 text-xs leading-relaxed mb-4 mt-auto">{description}</p>
                   <div className="mt-auto">
                     <span className="inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-300 hover:to-cyan-500 text-white font-semibold px-5 py-1.5 rounded text-xs transition duration-300">
                       Scopri di più
@@ -82,7 +132,75 @@ export default function Home() {
           </div>
         </div>
 
+        {/* ── DOVE SIAMO — solo mobile ─────────────────────── */}
+        <div className="md:hidden bg-slate-800 px-6 py-10">
+          <h2 className="text-xl font-bold text-white mb-6 text-center">Dove siamo</h2>
+
+          <div className="flex flex-col gap-5">
+
+            <a href="mailto:tecnotermciccia@libero.it" className="flex items-center gap-4 group">
+              <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+                <FaEnvelope className="text-blue-400" />
+              </div>
+              <div>
+                <p className="text-xs text-slate-400 mb-0.5">Email</p>
+                <p className="text-white font-medium group-hover:text-blue-400 transition break-all">tecnotermciccia@libero.it</p>
+              </div>
+            </a>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+                <FaMapMarkerAlt className="text-red-400" />
+              </div>
+              <div>
+                <p className="text-xs text-slate-400 mb-0.5">Indirizzo</p>
+                <p className="text-white font-medium">Piazza Aldo Moro, 3</p>
+                <p className="text-slate-300 text-sm">70056 Molfetta (BA)</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center shrink-0">
+                <FaClock className="text-yellow-400" />
+              </div>
+              <div>
+                <p className="text-xs text-slate-400 mb-1">Orari di apertura</p>
+                <div className="space-y-1 text-sm">
+                  <div className="flex gap-6">
+                    <span className="text-slate-300">Lun – Sab</span>
+                    <span className="text-cyan-400 font-medium">9:00 – 12:00</span>
+                  </div>
+                  <div className="flex gap-6">
+                    <span className="text-slate-300">Lun – Ven</span>
+                    <span className="text-cyan-400 font-medium">17:00 – 20:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mappa */}
+            <div className="rounded-xl overflow-hidden mt-2">
+              <iframe
+                src="https://www.google.com/maps?q=Piazza+Aldo+Moro,+3,+70056+Molfetta+BA&output=embed"
+                width="100%"
+                height="220"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                title="Posizione Tecnoterm"
+              />
+            </div>
+
+          </div>
+        </div>
+
       </main>
+
+      {/* Footer — visibile solo su mobile nella home */}
+      <div className="md:hidden">
+        <Footer />
+      </div>
+
     </div>
   );
 }
