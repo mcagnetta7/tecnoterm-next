@@ -56,102 +56,102 @@ const PRODOTTI = [
     name: "Vega M",        brand: "Sylber", categoria: "pompe",
     catLabel: "Pompa di calore", tags: [],
     desc: "Pompa di calore aria-acqua ad alta efficienza, ideale per riscaldamento e raffrescamento residenziale.",
-    image: "/pompa-sylber.jpeg", Icon: FaLeaf,
-    datasheet: "https://www.sylber.it/prodotti/pompe-calore",
+    image: "/assistenza/vega-m.jpg", Icon: FaLeaf,
+    datasheet: "https://www.sylber.it/prodotti/pompe-calore?range=71AAWAOWSF",
   },
   {
     name: "HP.QOR",        brand: "Unical", categoria: "pompe",
     catLabel: "Pompa di calore", tags: [],
     desc: "Pompa di calore split con tecnologia inverter per massima resa in tutte le stagioni.",
-    image: "/pompa-unical-1.jpeg", Icon: FaLeaf,
+    image: "/assistenza/hp-qor.jpg", Icon: FaLeaf,
     datasheet: "https://www.unicalag.it/upload/blocchi/X4979allegatoDATI_TECNICI1-1X_hp_qor_07-2024_it.pdf",
   },
   {
     name: "HP.OWER",       brand: "Unical", categoria: "pompe",
     catLabel: "Pompa di calore", tags: [],
     desc: "Soluzione monoblock compatta ad alta efficienza energetica, semplice da installare.",
-    image: "/pompa-unical-2.jpeg", Icon: FaLeaf,
-    datasheet: "https://www.unicalag.it/upload/blocchi/X4028allegatoDATI_TECNICI1-1X_hp_ower-one-r_05-2025_it.pdf",
+    image: "/assistenza/hp-ower.jpg", Icon: FaLeaf,
+    datasheet: "https://www.unicalag.it/upload/blocchi/X4028allegatoDEPLIANT1-1X_hp_ower-one-r_scheda_ita_04_2025.pdf",
   },
   /* Scaldabagni */
   {
     name: "HP 200P",       brand: "Unical", categoria: "scaldabagni",
     catLabel: "Scaldabagno", tags: ["Elettrico", "Pompa di calore"],
     desc: "Scaldabagno a pompa di calore da 200 litri: fino al 70% di risparmio rispetto al boiler elettrico tradizionale.",
-    image: null, Icon: FaWater,
-    datasheet: "https://www.unicalag.it/prodotti/scaldacqua",
+    image: "/assistenza/hp-200p.jpg", Icon: FaWater,
+    datasheet: "https://www.unicalag.it/upload/blocchi/X12140allegatoDEPLIANT1-1X_hp-100-200-300p-scheda-it_11-2025.pdf",
   },
   {
     name: "Devyl",         brand: "Sylber", categoria: "scaldabagni",
     catLabel: "Scaldabagno", tags: ["Metano"],
     desc: "Scaldabagno a gas a camera aperta, affidabile e dal rapido riscaldamento dell'acqua.",
-    image: null, Icon: FaWater,
-    datasheet: "https://www.sylber.it/prodotti/scaldabagni",
+    image: "/assistenza/devyl.jpg", Icon: FaWater,
+    datasheet: "https://www.sylber.it/prodotti/scaldabagni-gas-pompa-calore?action=download&id=51AJXIXESF-946d5faa292e79e4c22ebb819c0c1a99",
   },
   {
     name: "Artù",          brand: "Sylber", categoria: "scaldabagni",
     catLabel: "Scaldabagno", tags: ["Metano"],
     desc: "Scaldabagno a gas a camera stagna con scarico forzato, sicuro e adatto a qualsiasi ambiente.",
-    image: null, Icon: FaWater,
-    datasheet: "https://www.sylber.it/prodotti/scaldabagni",
+    image: "/assistenza/artu.jpg", Icon: FaWater,
+    datasheet: "https://www.sylber.it/prodotti/scaldabagni-gas-pompa-calore?action=download&id=51AIXIXESF-eac6605e4b15d0bbcbcc62df7af3bcfc",
   },
   /* Caldaie */
   {
     name: "Style 25C",     brand: "Sylber", categoria: "caldaie",
     catLabel: "Caldaia", tags: [],
     desc: "Caldaia murale a condensazione con design elegante e tecnologia a basse emissioni NOx.",
-    image: "/caldaia-sylber.jpeg", Icon: FaFire,
-    datasheet: "https://www.sylber.it/prodotti/caldaie",
+    image: "/assistenza/style-25c.jpg", Icon: FaFire,
+    datasheet: "https://www.sylber.it/prodotti/caldaie-residenziali?action=download&id=31B9CPCESF-4aee8ba7aeedf12dcfb0dfc51f8d10f6",
   },
   {
     name: "Linea K35B",    brand: "Sylber", categoria: "caldaie",
     catLabel: "Caldaia", tags: [],
     desc: "Caldaia a condensazione da 35 kW, ideale per abitazioni di medie e grandi dimensioni.",
-    image: "/caldaia-sylber.jpeg", Icon: FaFire,
-    datasheet: "https://www.sylber.it/prodotti/caldaie",
+    image: "/assistenza/linea-k35b.jpg", Icon: FaFire,
+    datasheet: "https://www.sylber.it/files/brochure/27024016_00_sylber_linea_k_b_it_brochure_06.2025.pdf",
   },
   {
     name: "EK!+24",        brand: "Unical", categoria: "caldaie",
     catLabel: "Caldaia", tags: [],
     desc: "Caldaia murale a condensazione con interfaccia intuitiva e alto rendimento stagionale.",
-    image: "/caldaia-unical.jpeg", Icon: FaFire,
-    datasheet: "https://www.unicalag.it/prodotti/caldaie",
+    image: "/assistenza/ek24.jpg", Icon: FaFire,
+    datasheet: "https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/5665/ek",
   },
   {
     name: "X+C24",         brand: "Unical", categoria: "caldaie",
     catLabel: "Caldaia", tags: [],
     desc: "Caldaia a condensazione combinata per riscaldamento e produzione istantanea di acqua calda sanitaria.",
-    image: "/caldaia-unical.jpeg", Icon: FaFire,
-    datasheet: "https://www.unicalag.it/prodotti/caldaie",
+    image: "/assistenza/xc24.jpg", Icon: FaFire,
+    datasheet: "https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2846/x",
   },
   /* Climatizzatori */
   {
     name: "YA3",           brand: "Unical", categoria: "climatizzatori",
     catLabel: "Climatizzatore", tags: ["+++A"],
     desc: "Climatizzatore inverter di classe A+++, silenzioso e potente per il massimo comfort.",
-    image: null, Icon: FaSnowflake,
-    datasheet: "https://www.unicalag.it/prodotti/climatizzatori",
+    image: "/assistenza/ya3.jpg", Icon: FaSnowflake,
+    datasheet: "https://www.unicalag.it/upload/blocchi/X4243allegatoDEPLIANT1-1X_ya3.pdf",
   },
   {
     name: "KMUN10-13",     brand: "Unical", categoria: "climatizzatori",
     catLabel: "Climatizzatore", tags: ["ECO"],
     desc: "Linea ECO a basso consumo energetico con refrigerante R32 a ridotto impatto ambientale.",
-    image: null, Icon: FaSnowflake,
-    datasheet: "https://www.unicalag.it/prodotti/climatizzatori",
+    image: "/assistenza/kmun.jpg", Icon: FaSnowflake,
+    datasheet: "https://www.idrocrimart.it/wp-content/uploads/2020/10/scheda-tecnica-climatizzatore-unical-air-cristal.pdf",
   },
   {
     name: "AOHH12KNCA",   brand: "General", categoria: "climatizzatori",
     catLabel: "Climatizzatore", tags: ["Unità esterna"],
     desc: "Unità esterna ad alta efficienza della serie HH, compatibile con sistema multi-split.",
-    image: "/condizionatore-fujitsu.jpeg", Icon: FaSnowflake,
-    datasheet: "https://www.fujitsu-general.com/eu/it/products/",
+    image: "/assistenza/AOHH12KNCA.jpg", Icon: FaSnowflake,
+    datasheet: "https://fujitsuclimatizzatori.it/wp-content/uploads/2024/05/Scheda-Serie-KN-02_2024-lowres.pdf",
   },
   {
     name: "ASHH12KNCA",   brand: "General", categoria: "climatizzatori",
     catLabel: "Climatizzatore", tags: ["Unità interna"],
     desc: "Unità interna della serie HH con design ultra-sottile e funzione self-cleaning integrata.",
-    image: "/condizionatore-fujitsu.jpeg", Icon: FaSnowflake,
-    datasheet: "https://www.fujitsu-general.com/eu/it/products/",
+    image: "/assistenza/ASHH12KNCA.jpg", Icon: FaSnowflake,
+    datasheet: "https://www.general-hvac.com/it/products/split/wall/ashh12knca.html",
   },
 ];
 
@@ -377,8 +377,18 @@ export default function AssistenzaPage() {
 
       <main>
         {/* Hero */}
-        <section className="bg-blue-300 py-16 md:py-24">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+        <section className="relative py-24 md:py-36 overflow-hidden">
+          {/* Immagine di sfondo */}
+          <img
+            src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=1920&q=80&auto=format&fit=crop"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-blue-950/70" />
+          {/* Testo */}
+          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
             <h1
               className="text-4xl md:text-5xl font-bold text-white mb-4"
               style={{ letterSpacing: "-0.02em" }}
@@ -406,14 +416,14 @@ export default function AssistenzaPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={name}
-                  className="opacity-60 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0"
+                  className="transition duration-300 hover:scale-105"
                 >
                   <Image
                     src={src}
                     alt={`Logo ${name}`}
-                    width={name === "General" ? 180 : 140}
-                    height={70}
-                    className="object-contain h-14 w-auto"
+                    width={name === "General" ? 320 : name === "Unical" ? 260 : 200}
+                    height={100}
+                    className={`object-contain w-auto ${name === "General" ? "h-[104px]" : name === "Unical" ? "h-24" : "h-20"}`}
                   />
                 </a>
               ))}

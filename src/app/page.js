@@ -24,8 +24,8 @@ const services = [
   },
   {
     logo: '/logocasa.png',
-    alt: 'Impianti idrici e fognanti - logo',
-    title: 'Impianti idrici e fognanti',
+    alt: 'Impianti idrici e fognari - logo',
+    title: 'Impianti idrici e fognari',
     description: 'Realizzazioni e rifacimento impianti termici, idrici e gas',
     href: '/impianti-idrici',
   },

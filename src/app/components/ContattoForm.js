@@ -18,52 +18,44 @@ export default function ContattoForm() {
     servizio: "",
     messaggio: "",
   });
-  const [inviato, setInviato] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [stato, setStato] = useState("idle"); // idle | loading | success | error
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setStato("loading");
 
-    const corpo = `
-Nome: ${form.nome}
-Telefono: ${form.telefono}
-Servizio richiesto: ${form.servizio}
+    try {
+      const res = await fetch("/api/contatto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-${form.messaggio}
-    `.trim();
+      if (!res.ok) throw new Error();
 
-    const mailto = `mailto:tecnotermciccia@libero.it?subject=${encodeURIComponent(
-      `Richiesta preventivo – ${form.servizio || "Tecnoterm"}`
-    )}&body=${encodeURIComponent(corpo)}`;
-
-    window.location.href = mailto;
-
-    setTimeout(() => {
-      setLoading(false);
-      setInviato(true);
-    }, 800);
+      setStato("success");
+    } catch {
+      setStato("error");
+    }
   };
 
-  if (inviato) {
+  if (stato === "success") {
     return (
       <div className="bg-slate-800 rounded-2xl p-10 shadow-lg flex flex-col items-center justify-center text-center gap-4 h-full">
         <FaCheckCircle className="text-5xl text-cyan-400" />
         <h3 className="text-2xl font-bold text-white">Richiesta inviata!</h3>
         <p className="text-slate-300 text-sm leading-relaxed">
-          Si è aperto il tuo client email con il messaggio precompilato. Se non si è aperto,
-          scrivici direttamente a{" "}
-          <a href="mailto:tecnotermciccia@libero.it" className="text-cyan-400 underline">
-            tecnotermciccia@libero.it
-          </a>
-          .
+          Abbiamo ricevuto la tua richiesta e ti risponderemo il prima possibile.
         </p>
         <button
-          onClick={() => { setInviato(false); setForm({ nome: "", telefono: "", email: "", servizio: "", messaggio: "" }); }}
+          onClick={() => {
+            setStato("idle");
+            setForm({ nome: "", telefono: "", email: "", servizio: "", messaggio: "" });
+          }}
           className="mt-2 text-sm text-slate-400 hover:text-white transition underline"
         >
           Invia un&apos;altra richiesta
@@ -148,13 +140,23 @@ ${form.messaggio}
         />
       </div>
 
+      {stato === "error" && (
+        <p className="text-red-400 text-sm">
+          Si è verificato un errore. Riprova o scrivici a{" "}
+          <a href="mailto:tecnotermciccia@libero.it" className="underline">
+            tecnotermciccia@libero.it
+          </a>
+          .
+        </p>
+      )}
+
       <button
         type="submit"
-        disabled={loading}
+        disabled={stato === "loading"}
         className="mt-auto flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-300 hover:to-cyan-500 disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
       >
-        <FaPaperPlane className={loading ? "animate-bounce" : ""} />
-        {loading ? "Apertura email…" : "Invia richiesta"}
+        <FaPaperPlane className={stato === "loading" ? "animate-bounce" : ""} />
+        {stato === "loading" ? "Invio in corso…" : "Invia richiesta"}
       </button>
     </form>
   );

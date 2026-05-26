@@ -109,7 +109,7 @@ export default function Header() {
                   </div>
 
                   {/* Impianti idrici */}
-                  <Link href="/impianti-idrici" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Impianti idrici</Link>
+                  <Link href="/impianti-idrici" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Impianti idrici e fognari</Link>
                 </div>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function Header() {
                   )}
                 </div>
 
-                <Link href="/impianti-idrici" className="py-1 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={closeMobile}>Impianti idrici</Link>
+                <Link href="/impianti-idrici" className="py-1 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={closeMobile}>Impianti idrici e fognari</Link>
               </div>
             </div>
 

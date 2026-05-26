@@ -71,8 +71,15 @@ export default function RecensioniPage() {
 
       <main>
         {/* Hero */}
-        <section className="bg-blue-300 py-16 md:py-24">
-          <div className="max-w-3xl mx-auto px-6 text-center">
+        <section className="relative py-24 md:py-36 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1633613286991-611fe299c4be?w=1920&q=80&auto=format&fit=crop"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-blue-950/70" />
+          <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
             <h1
               className="text-4xl md:text-5xl font-bold text-white mb-4"
               style={{ letterSpacing: "-0.02em" }}
