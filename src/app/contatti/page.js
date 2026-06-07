@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContattoForm from '../components/ContattoForm';
+import Image from 'next/image';
 import {
   FaPhoneAlt,
   FaWhatsapp,
@@ -10,9 +11,9 @@ import {
 } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Contatti | Tecnoterm',
+  title: 'Contatti | Tecnoterm Molfetta – Richiedi un Preventivo',
   description:
-    'Contatta Tecnoterm: telefono, WhatsApp, email e dove trovarci a Molfetta. Siamo a tua disposizione.',
+    'Contatta Tecnoterm a Molfetta: chiama l\'080 3352600, scrivici su WhatsApp o invia una richiesta di preventivo. Piazza Aldo Moro 3, Molfetta (BA). Serviamo tutta la provincia di Bari.',
 };
 
 export default function ContattiPage() {
@@ -22,11 +23,13 @@ export default function ContattiPage() {
 
       <main>
         {/* Hero */}
-        <section className="h-64 md:h-96 overflow-hidden">
-          <img
+        <section className="relative h-64 md:h-96 overflow-hidden">
+          <Image
             src="/contatti.png"
-            alt="Tecnoterm contatti"
-            className="w-full h-full object-cover object-top"
+            alt="Tecnoterm contatti Molfetta"
+            fill
+            className="object-cover object-top"
+            priority
           />
         </section>
 

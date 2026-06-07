@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   FaTint,
   FaFire,
@@ -14,9 +15,9 @@ import {
 } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Impianti Idrici e Fognanti | Tecnoterm',
+  title: 'Impianti Idrici, Termici e Fognari a Molfetta | Tecnoterm',
   description:
-    'Tecnoterm realizza impianti termici, idrici, solari, fognari e interventi di riparazione e montaggio a Molfetta e provincia.',
+    'Tecnoterm realizza impianti idrici, termici, solari e fognari a Molfetta e provincia di Bari. Riparazioni idrauliche, montaggio sanitari e rifacimento impianti chiavi in mano.',
 };
 
 const SERVIZI = [
@@ -37,11 +38,13 @@ export default function ImpiantiIdriciPage() {
       <main>
         {/* ── Hero ─────────────────────────────────────────── */}
         <section className="relative py-24 md:py-36 overflow-hidden">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1646009445351-b8192e095f3a?w=1920&q=80&auto=format&fit=crop"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            fill
+            className="object-cover object-center"
+            priority
           />
           <div className="absolute inset-0 bg-blue-950/70" />
           <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -64,11 +67,7 @@ export default function ImpiantiIdriciPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="/impianti/termici.jpeg"
-                  alt="Impianto termico"
-                  className="w-full h-full object-cover"
-                />
+                <Image src="/impianti/termici.jpeg" alt="Impianto termico Molfetta" fill className="object-cover" />
               </div>
 
               <div>
@@ -127,11 +126,7 @@ export default function ImpiantiIdriciPage() {
               </div>
 
               <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="/impianti/idrici.jpeg"
-                  alt="Impianti idrici"
-                  className="w-full h-full object-cover"
-                />
+                <Image src="/impianti/idrici.jpeg" alt="Impianti idrici Molfetta" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -143,11 +138,7 @@ export default function ImpiantiIdriciPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="/impianti/solari.jpeg"
-                  alt="Impianti solari"
-                  className="w-full h-full object-cover"
-                />
+                <Image src="/impianti/solari.jpeg" alt="Impianti solari termici Molfetta" fill className="object-cover" />
               </div>
 
               <div>
@@ -205,11 +196,7 @@ export default function ImpiantiIdriciPage() {
               </div>
 
               <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="/impianti/fognari.jpeg"
-                  alt="Impianti fognari"
-                  className="w-full h-full object-cover"
-                />
+                <Image src="/impianti/fognari.jpeg" alt="Impianti fognari Molfetta" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -295,11 +282,7 @@ export default function ImpiantiIdriciPage() {
               </div>
 
               <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="/impianti/montaggi.jpeg"
-                  alt="Montaggi idraulici"
-                  className="w-full h-full object-cover"
-                />
+                <Image src="/impianti/montaggi.jpeg" alt="Montaggi idraulici Molfetta" fill className="object-cover" />
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Image from "next/image";
 
 function Stelle({ valore, onClick }) {
   return (
@@ -72,11 +73,13 @@ export default function RecensioniPage() {
       <main>
         {/* Hero */}
         <section className="relative py-24 md:py-36 overflow-hidden">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1633613286991-611fe299c4be?w=1920&q=80&auto=format&fit=crop"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            fill
+            className="object-cover object-center"
+            priority
           />
           <div className="absolute inset-0 bg-blue-950/70" />
           <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">

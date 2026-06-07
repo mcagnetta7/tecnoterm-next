@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaHeart, FaShieldAlt, FaWrench, FaUsers, FaCheckCircle, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 export const metadata = {
@@ -16,11 +17,13 @@ export default function ChiSiamoPage() {
 
       <main className="overflow-hidden">
         {/* Hero */}
-        <section>
-          <img
+        <section className="relative overflow-hidden h-[80vw] md:h-[45vw]">
+          <Image
             src="/hero-chi-siamo.png"
             alt="Tecnoterm – da oltre 25 anni garantiamo esperienza e comfort"
-            className="w-full h-auto block"
+            fill
+            className="object-cover object-top"
+            priority
           />
         </section>
 
@@ -47,11 +50,7 @@ export default function ChiSiamoPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="/vincenzo-ciccia.jpeg"
-                  alt="Vincenzo Ciccia – fondatrice Tecnoterm"
-                  className="w-full h-full object-cover"
-                />
+                <Image src="/vincenzo-ciccia.jpeg" alt="Vincenzo Ciccia – prima generazione Tecnoterm" fill className="object-cover" />
                 <div className="absolute inset-0 bg-blue-300/10 mix-blend-overlay" />
               </div>
 
@@ -127,11 +126,7 @@ export default function ChiSiamoPage() {
               </div>
 
               <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="/antonio-ciccia.jpeg"
-                  alt="Tecnico specializzato al lavoro"
-                  className="w-full h-full object-cover"
-                />
+                <Image src="/antonio-ciccia.jpeg" alt="Antonio Ciccia – fondatore Tecnoterm Molfetta" fill className="object-cover" />
                 <div className="absolute inset-0 bg-blue-300/10 mix-blend-overlay" />
               </div>
             </div>
@@ -143,11 +138,7 @@ export default function ChiSiamoPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <img
-                  src="/alessandro-ciccia.png"
-                  alt="Alessandro Ciccia – terza generazione Tecnoterm"
-                  className="w-full h-full object-cover"
-                />
+                <Image src="/alessandro-ciccia.png" alt="Alessandro Ciccia – terza generazione Tecnoterm Molfetta" fill className="object-cover" />
                 <div className="absolute inset-0 bg-blue-300/10 mix-blend-overlay" />
               </div>
 

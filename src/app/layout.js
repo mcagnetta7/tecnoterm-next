@@ -12,35 +12,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Tecnoterm Molfetta - Impianti Riscaldamento e Climatizzazione | Assistenza 24h",
+  metadataBase: new URL("https://tecnoterm.it"),
+  title: {
+    default: "Tecnoterm Molfetta – Impianti Riscaldamento, Caldaie e Climatizzazione",
+    template: "%s | Tecnoterm Molfetta",
+  },
   description: "Tecnoterm: installazione, manutenzione e assistenza impianti termici, riscaldamento, climatizzazione e pompe di calore a Molfetta. Professionisti dal 1999.",
-  keywords: "impianti riscaldamento Molfetta, climatizzazione, caldaie, pompe di calore, assistenza tecnica, impianti termoidraulici",
+  keywords: "impianti riscaldamento Molfetta, caldaie Molfetta, climatizzatori Molfetta, pompe di calore, assistenza tecnica caldaie, impianti idrici, Sylber, Unical, General, termoidraulico Molfetta",
   authors: [{ name: "Tecnoterm di Ciccia Antonio" }],
   creator: "Tecnoterm",
   publisher: "Tecnoterm",
-  robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
-  canonical: "https://tecnoterm.it",
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Tecnoterm Molfetta - Impianti Riscaldamento e Climatizzazione",
-    description: "Soluzioni termoidrauliche professionali a Molfetta. Installazione, manutenzione e assistenza 24h.",
+    title: "Tecnoterm Molfetta – Impianti Riscaldamento e Climatizzazione",
+    description: "Soluzioni termoidrauliche professionali a Molfetta. Installazione, manutenzione e assistenza caldaie, climatizzatori e pompe di calore dal 1999.",
     url: "https://tecnoterm.it",
     siteName: "Tecnoterm",
     locale: "it_IT",
     type: "website",
     images: [
       {
-        url: "https://tecnoterm.it/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Tecnoterm - Impianti Riscaldamento e Climatizzazione",
+        url: "/logo.png",
+        width: 720,
+        height: 220,
+        alt: "Tecnoterm – Impianti Riscaldamento e Climatizzazione Molfetta",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tecnoterm Molfetta",
-    description: "Impianti Riscaldamento e Climatizzazione",
+    title: "Tecnoterm Molfetta – Impianti e Assistenza Tecnica",
+    description: "Caldaie, climatizzatori, pompe di calore e impianti idrici a Molfetta dal 1999.",
   },
   alternates: {
     canonical: "https://tecnoterm.it",
@@ -91,9 +93,20 @@ export default function RootLayout({ children }) {
                   closes: "20:00",
                 },
               ],
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 41.2006,
+                longitude: 16.5980,
+              },
+              areaServed: [
+                { "@type": "City", name: "Molfetta" },
+                { "@type": "AdministrativeArea", name: "Provincia di Bari" },
+              ],
+              hasMap: "https://www.google.com/maps?q=Piazza+Aldo+Moro,+3,+70056+Molfetta+BA",
               sameAs: [
                 "https://www.facebook.com/TecnotermMolfetta",
                 "https://www.instagram.com/tecnoterm_dicicciaantonio/",
+                "https://www.linkedin.com/company/tecnoterm-di-ciccia-antonio/",
               ],
               priceRange: "$$",
             }),

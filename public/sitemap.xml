@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Home Page -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://tecnoterm.it/</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Assistenza -->
+  <url>
+    <loc>https://tecnoterm.it/chi-siamo</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://tecnoterm.it/assistenza</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://tecnoterm.it/impianti-idrici</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://tecnoterm.it/contatti</loc>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Immagini nel sitemap -->
   <url>
-    <loc>https://tecnoterm.it/</loc>
-    <image:image>
-      <image:loc>https://tecnoterm.it/logo.png</image:loc>
-      <image:title>Logo Tecnoterm</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://tecnoterm.it/hero-img.jpeg</image:loc>
-      <image:title>Impianto termoidraulico</image:title>
-    </image:image>
+    <loc>https://tecnoterm.it/recensioni</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>

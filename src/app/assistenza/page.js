@@ -140,11 +140,11 @@ const PRODOTTI = [
     datasheet: "https://www.idrocrimart.it/wp-content/uploads/2020/10/scheda-tecnica-climatizzatore-unical-air-cristal.pdf",
   },
   {
-    name: "AOHH12KNCA",   brand: "General", categoria: "climatizzatori",
+    name: "ASHH2KLTA",   brand: "General", categoria: "climatizzatori",
     catLabel: "Climatizzatore", tags: ["Unità esterna"],
     desc: "Unità esterna ad alta efficienza della serie HH, compatibile con sistema multi-split.",
-    image: "/assistenza/AOHH12KNCA.jpg", Icon: FaSnowflake,
-    datasheet: "https://fujitsuclimatizzatori.it/wp-content/uploads/2024/05/Scheda-Serie-KN-02_2024-lowres.pdf",
+    image: "/assistenza/ASHH2KLTA.jpeg", Icon: FaSnowflake,
+    datasheet: "https://www.general-hvac.com/it/products/split/wall/ashh12klta.html",
   },
   {
     name: "ASHH12KNCA",   brand: "General", categoria: "climatizzatori",
@@ -379,11 +379,13 @@ export default function AssistenzaPage() {
         {/* Hero */}
         <section className="relative py-24 md:py-36 overflow-hidden">
           {/* Immagine di sfondo */}
-          <img
-            src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?w=1920&q=80&auto=format&fit=crop"
+          <Image
+            src="/cicciaAlLavoro.jpeg"
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            fill
+            className="object-cover object-center"
+            priority
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-blue-950/70" />

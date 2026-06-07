@@ -10,8 +10,8 @@ import {
 } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Tecnoterm - Impianti e Assistenza Tecnica',
-  description: 'Tecnoterm: specialisti in impianti di climatizzazione, assistenza tecnica e impianti idrici a Molfetta.',
+  title: 'Tecnoterm Molfetta – Caldaie, Climatizzatori e Impianti Idrici',
+  description: 'Tecnoterm a Molfetta dal 1999: installazione e assistenza caldaie, climatizzatori, pompe di calore e impianti idrici. Centro autorizzato Sylber e Unical. Provincia di Bari.',
 };
 
 const services = [
@@ -40,11 +40,14 @@ export default function Home() {
 
         {/* ── HERO MOBILE ──────────────────────────────────── */}
         <div className="md:hidden relative text-center">
-          <img
+          <Image
             src="/sfondo_mobile.png"
             alt=""
             aria-hidden="true"
+            width={800}
+            height={1200}
             className="w-full h-auto block"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-900/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 px-6 pb-8 z-10">
@@ -80,10 +83,12 @@ export default function Home() {
 
         {/* ── HERO IMAGE DESKTOP ───────────────────────────── */}
         <div className="hidden md:block relative overflow-hidden" style={{ flex: '0 0 65%' }}>
-          <img
+          <Image
             src="/sfondoDefinitivo6.png"
-            alt="Impianto termoidraulico Tecnoterm"
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            alt="Impianto termoidraulico Tecnoterm Molfetta"
+            fill
+            className="object-cover object-top"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent from-[80%] to-white pointer-events-none" />
         </div>
