@@ -10,8 +10,8 @@ export async function POST(request) {
     }
 
     const { error } = await resend.emails.send({
-      from: 'Tecnoterm Sito <onboarding@resend.dev>',
-      to: 'mattia.cagnetta.work@gmail.com', // ← TEMPORANEO per test, cambia con tecnotermciccia@libero.it dopo verifica dominio
+      from: 'Tecnoterm <noreply@tecnoterm-molfetta.it>',
+      to: 'tecnotermciccia@libero.it',
       replyTo: email,
       subject: `Richiesta preventivo – ${servizio}`,
       html: `
