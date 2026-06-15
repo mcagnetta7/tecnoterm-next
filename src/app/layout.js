@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://tecnoterm.it"),
+  metadataBase: new URL("https://tecnoterm-molfetta.it"),
   title: {
     default: "Tecnoterm Molfetta – Impianti Riscaldamento, Caldaie e Climatizzazione",
     template: "%s | Tecnoterm Molfetta",
@@ -55,6 +56,10 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="theme-color" content="#f4f4f4" />
       </head>
+      <Script
+        src="https://embeds.iubenda.com/widgets/3defe7b6-c2da-4c62-baf3-3785a8df09e5.js"
+        strategy="beforeInteractive"
+      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

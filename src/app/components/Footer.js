@@ -96,6 +96,24 @@ export default function Footer() {
       <div className="border-t border-slate-700">
         <div className="max-w-6xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Tecnoterm di Ciccia Antonio. Tutti i diritti riservati.</p>
+          <div className="flex gap-4">
+            <a
+              href="https://www.iubenda.com/privacy-policy/77550649"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-300 transition"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="https://www.iubenda.com/privacy-policy/77550649/cookie-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-300 transition"
+            >
+              Cookie Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>
