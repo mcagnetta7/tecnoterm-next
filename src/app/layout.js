@@ -27,7 +27,7 @@ export const metadata = {
   openGraph: {
     title: "Tecnoterm Molfetta – Impianti Riscaldamento e Climatizzazione",
     description: "Soluzioni termoidrauliche professionali a Molfetta. Installazione, manutenzione e assistenza caldaie, climatizzatori e pompe di calore dal 1999.",
-    url: "https://tecnoterm.it",
+    url: "https://tecnoterm-molfetta.it",
     siteName: "Tecnoterm",
     locale: "it_IT",
     type: "website",
@@ -46,7 +46,10 @@ export const metadata = {
     description: "Caldaie, climatizzatori, pompe di calore e impianti idrici a Molfetta dal 1999.",
   },
   alternates: {
-    canonical: "https://tecnoterm.it",
+    canonical: "https://tecnoterm-molfetta.it",
+  },
+  icons: {
+    icon: "/iconTecnoterm.png",
   },
 };
 
