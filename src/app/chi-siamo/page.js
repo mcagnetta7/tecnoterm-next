@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { FaHeart, FaShieldAlt, FaWrench, FaUsers, FaCheckCircle, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Chi Siamo | Tecnoterm',
+  title: 'Chi Siamo Tecnoterm | Esperti Caldaie Molfetta dal 1999',
   description:
-    'Scopri la storia di Tecnoterm: una famiglia, esperienza e passione per il riscaldamento e la climatizzazione che continua da generazioni.',
+    'Tecnoterm: specialisti caldaie, climatizzatori e impianti idrici a Molfetta dal 1999. Scopri chi siamo, la nostra esperienza e passione per il riscaldamento. Autorizzati Sylber, Unical, General. Provincia di Bari e Puglia.',
 };
 
 export default function ChiSiamoPage() {

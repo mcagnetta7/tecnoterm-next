@@ -10,8 +10,8 @@ import {
 } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Tecnoterm Molfetta – Caldaie, Climatizzatori e Impianti Idrici',
-  description: 'Tecnoterm a Molfetta dal 1999: installazione e assistenza caldaie, climatizzatori, pompe di calore e impianti idrici. Centro autorizzato Sylber e Unical. Provincia di Bari.',
+  title: 'Caldaie e Climatizzatori Molfetta | Assistenza Tecnica Autorizzata',
+  description: 'Assistenza caldaie Molfetta e Puglia: installazione, manutenzione e riparazione. Centro autorizzato Sylber, Unical, General. Climatizzatori, pompe di calore, impianti idrici. Interventi rapidi provincia Bari.',
 };
 
 const services = [
@@ -42,8 +42,7 @@ export default function Home() {
         <div className="md:hidden relative text-center">
           <Image
             src="/sfondo_mobile.png"
-            alt=""
-            aria-hidden="true"
+            alt="Tecnoterm Molfetta - Impianti riscaldamento e climatizzazione"
             width={800}
             height={1200}
             className="w-full h-auto block"
@@ -55,7 +54,7 @@ export default function Home() {
               Dal 1999 a Molfetta
             </p>
             <h1 className="text-3xl font-extrabold text-white mb-2" style={{ letterSpacing: '-0.02em' }}>
-              Tecnoterm
+              Tecnoterm - Impianti Riscaldamento Molfetta
             </h1>
             <p className="text-white/90 text-sm leading-relaxed max-w-xs mx-auto mb-5">
               Specialisti in impianti termici, idrici e climatizzazione.
@@ -109,7 +108,7 @@ export default function Home() {
                   <h2 className="text-xs font-semibold text-white mb-1.5 leading-snug">{title}</h2>
                   <p className="text-gray-300 text-[11px] leading-relaxed mb-3">{description}</p>
                   <span className="mt-auto inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 text-white font-semibold px-3 py-1 rounded text-[11px]">
-                    Scopri di più
+                    Scopri {title}
                   </span>
                 </a>
               ))}
@@ -128,7 +127,7 @@ export default function Home() {
                   <p className="text-gray-300 text-xs leading-relaxed mb-4 mt-auto">{description}</p>
                   <div className="mt-auto">
                     <span className="inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-300 hover:to-cyan-500 text-white font-semibold px-5 py-1.5 rounded text-xs transition duration-300">
-                      Scopri di più
+                      Scopri {title}
                     </span>
                   </div>
                 </a>
@@ -136,6 +135,27 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* ── CHI SIAMO / INTRO — solo mobile ────────────────────── */}
+        <article className="md:hidden py-14 bg-gradient-to-b from-white to-slate-50">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 text-center">
+              Perché scegliere Tecnoterm
+            </h2>
+            <p className="text-slate-600 text-lg leading-relaxed mb-6">
+              Tecnoterm è il tuo partner affidabile a Molfetta per tutte le esigenze di riscaldamento, climatizzazione e impianti idrici. Con oltre 25 anni di esperienza nel settore termoidraulico, offriamo servizi completi di installazione, manutenzione e assistenza tecnica per caldaie, climatizzatori, pompe di calore e impianti gas a servizio di residenze e aziende della provincia di Bari.
+            </p>
+            <p className="text-slate-600 text-lg leading-relaxed mb-6">
+              Siamo centro autorizzato e specializzato per i migliori brand del mercato: Sylber, Unical e General. I nostri tecnici professionisti certificati garantiscono interventi rapidi, affidabili e con assistenza continuativa per assicurare il massimo comfort termico e la sicurezza dei vostri impianti.
+            </p>
+            <div className="space-y-3 text-slate-700 text-base">
+              <p className="flex items-center gap-2"><span className="text-cyan-500 font-bold">✓</span> Professionisti certificati e autorizzati</p>
+              <p className="flex items-center gap-2"><span className="text-cyan-500 font-bold">✓</span> Interventi rapidi e affidabili</p>
+              <p className="flex items-center gap-2"><span className="text-cyan-500 font-bold">✓</span> Garanzia e assistenza continuativa</p>
+              <p className="flex items-center gap-2"><span className="text-cyan-500 font-bold">✓</span> Serviamo tutta la provincia di Bari</p>
+            </div>
+          </div>
+        </article>
 
         {/* ── DOVE SIAMO — solo mobile ─────────────────────── */}
         <div className="md:hidden bg-slate-800 px-6 py-10">

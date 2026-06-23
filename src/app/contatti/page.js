@@ -11,9 +11,9 @@ import {
 } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Contatti | Tecnoterm Molfetta – Richiedi un Preventivo',
+  title: 'Contatti Tecnoterm | Preventivo Caldaie Molfetta',
   description:
-    'Contatta Tecnoterm a Molfetta: chiama l\'080 3352600, scrivici su WhatsApp o invia una richiesta di preventivo. Piazza Aldo Moro 3, Molfetta (BA). Serviamo tutta la provincia di Bari.',
+    'Contatta Tecnoterm per preventivo caldaie, climatizzatori, assistenza tecnica. Molfetta (BA), provincia Bari e Puglia. Telefono 080 3352600, WhatsApp, email. Risposta rapida garantita.',
 };
 
 export default function ContattiPage() {

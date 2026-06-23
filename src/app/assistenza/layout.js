@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Assistenza Tecnica | Caldaie, Climatizzatori, Pompe di Calore – Tecnoterm Molfetta',
-  description: 'Assistenza tecnica autorizzata Sylber, Unical e General a Molfetta. Installazione e manutenzione di caldaie, scaldabagni, pompe di calore e climatizzatori nella provincia di Bari.',
+  title: 'Assistenza Caldaie Molfetta | Centro Autorizzato Sylber, Unical, General',
+  description: 'Miglior centro assistenza tecnica caldaie a Molfetta e provincia Bari. Installazione, manutenzione, riparazione caldaie, climatizzatori, pompe di calore. Interventi rapidi autorizzati Sylber, Unical, General.',
 };
 
 const faqSchema = {

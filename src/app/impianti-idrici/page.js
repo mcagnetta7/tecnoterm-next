@@ -15,9 +15,9 @@ import {
 } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Impianti Idrici, Termici e Fognari a Molfetta | Tecnoterm',
+  title: 'Impianti Idrici e Termici Molfetta | Assistenza Idraulica Puglia',
   description:
-    'Tecnoterm realizza impianti idrici, termici, solari e fognari a Molfetta e provincia di Bari. Riparazioni idrauliche, montaggio sanitari e rifacimento impianti chiavi in mano.',
+    'Impianti idrici, termici e fognari a Molfetta, provincia di Bari e Puglia. Installazione, riparazione idraulica, assistenza tecnica. Realizziamo impianti chiavi in mano con garanzia.',
 };
 
 const SERVIZI = [

@@ -100,10 +100,10 @@ export default function Header() {
                     {/* Livello 2 */}
                     <div className="absolute left-full top-0 w-52 bg-blue-600 opacity-0 invisible group-hover/assistenza:opacity-100 group-hover/assistenza:visible transition-all duration-200 shadow-xl rounded-r-lg rounded-bl-lg">
                       <div className="py-2">
-                        <Link href="/assistenza?cat=caldaie#catalogo"        className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Caldaie</Link>
-                        <Link href="/assistenza?cat=scaldabagni#catalogo"    className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Scaldabagni</Link>
-                        <Link href="/assistenza?cat=pompe#catalogo"          className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Pompe di calore</Link>
-                        <Link href="/assistenza?cat=climatizzatori#catalogo" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Climatizzatori</Link>
+                        <Link href="/assistenza?cat=caldaie#catalogo"        className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition" rel="nofollow">Caldaie</Link>
+                        <Link href="/assistenza?cat=scaldabagni#catalogo"    className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition" rel="nofollow">Scaldabagni</Link>
+                        <Link href="/assistenza?cat=pompe#catalogo"          className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition" rel="nofollow">Pompe di calore</Link>
+                        <Link href="/assistenza?cat=climatizzatori#catalogo" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition" rel="nofollow">Climatizzatori</Link>
                       </div>
                     </div>
                   </div>
@@ -169,10 +169,10 @@ export default function Header() {
 
                   {isMobileAssistenzaOpen && (
                     <div className="pl-3 flex flex-col gap-0.5 pb-1 border-l border-cyan-200 ml-1 mt-0.5">
-                      <Link href="/assistenza?cat=caldaie#catalogo"        className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile}>Caldaie</Link>
-                      <Link href="/assistenza?cat=scaldabagni#catalogo"    className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile}>Scaldabagni</Link>
-                      <Link href="/assistenza?cat=pompe#catalogo"          className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile}>Pompe di calore</Link>
-                      <Link href="/assistenza?cat=climatizzatori#catalogo" className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile}>Climatizzatori</Link>
+                      <Link href="/assistenza?cat=caldaie#catalogo"        className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile} rel="nofollow">Caldaie</Link>
+                      <Link href="/assistenza?cat=scaldabagni#catalogo"    className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile} rel="nofollow">Scaldabagni</Link>
+                      <Link href="/assistenza?cat=pompe#catalogo"          className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile} rel="nofollow">Pompe di calore</Link>
+                      <Link href="/assistenza?cat=climatizzatori#catalogo" className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile} rel="nofollow">Climatizzatori</Link>
                     </div>
                   )}
                 </div>

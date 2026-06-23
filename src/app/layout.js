@@ -18,7 +18,7 @@ export const metadata = {
     default: "Tecnoterm Molfetta – Impianti Riscaldamento, Caldaie e Climatizzazione",
     template: "%s | Tecnoterm Molfetta",
   },
-  description: "Tecnoterm: installazione, manutenzione e assistenza impianti termici, riscaldamento, climatizzazione e pompe di calore a Molfetta. Professionisti dal 1999.",
+  description: "Assistenza caldaie Molfetta e Puglia: installazione, manutenzione, riparazione caldaie, climatizzatori, pompe di calore, impianti idrici dal 1999. Miglior centro autorizzato Sylber, Unical, General.",
   keywords: "impianti riscaldamento Molfetta, caldaie Molfetta, climatizzatori Molfetta, pompe di calore, assistenza tecnica caldaie, impianti idrici, Sylber, Unical, General, termoidraulico Molfetta",
   authors: [{ name: "Tecnoterm di Ciccia Antonio" }],
   creator: "Tecnoterm",
@@ -46,23 +46,24 @@ export const metadata = {
     description: "Caldaie, climatizzatori, pompe di calore e impianti idrici a Molfetta dal 1999.",
   },
   alternates: {
-    canonical: "https://tecnoterm-molfetta.it",
+    canonical: "https://tecnoterm-molfetta.it/",
   },
   icons: {
     icon: "/iconTecnoterm.png",
+    apple: "/iconTecnoterm.png",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="it">
+    <html lang="it" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#f4f4f4" />
+        <Script
+          src="https://embeds.iubenda.com/widgets/3defe7b6-c2da-4c62-baf3-3785a8df09e5.js"
+          strategy="lazyOnload"
+        />
       </head>
-      <Script
-        src="https://embeds.iubenda.com/widgets/3defe7b6-c2da-4c62-baf3-3785a8df09e5.js"
-        strategy="beforeInteractive"
-      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
