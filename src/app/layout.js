@@ -45,9 +45,6 @@ export const metadata = {
     title: "Tecnoterm Molfetta – Impianti e Assistenza Tecnica",
     description: "Caldaie, climatizzatori, pompe di calore e impianti idrici a Molfetta dal 1999.",
   },
-  alternates: {
-    canonical: "https://tecnoterm-molfetta.it/",
-  },
   icons: {
     icon: "/iconTecnoterm.png",
     apple: "/iconTecnoterm.png",

@@ -135,28 +135,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* ── CHI SIAMO / INTRO — solo mobile ────────────────────── */}
-        <article className="md:hidden py-14 bg-gradient-to-b from-white to-slate-50">
-          <div className="max-w-3xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 text-center">
-              Perché scegliere Tecnoterm
-            </h2>
-            <p className="text-slate-600 text-lg leading-relaxed mb-6">
-              Tecnoterm è il tuo partner affidabile a Molfetta per tutte le esigenze di riscaldamento, climatizzazione e impianti idrici. Con oltre 25 anni di esperienza nel settore termoidraulico, offriamo servizi completi di installazione, manutenzione e assistenza tecnica per caldaie, climatizzatori, pompe di calore e impianti gas a servizio di residenze e aziende della provincia di Bari.
-            </p>
-            <p className="text-slate-600 text-lg leading-relaxed mb-6">
-              Siamo centro autorizzato e specializzato per i migliori brand del mercato: Sylber, Unical e General. I nostri tecnici professionisti certificati garantiscono interventi rapidi, affidabili e con assistenza continuativa per assicurare il massimo comfort termico e la sicurezza dei vostri impianti.
-            </p>
-            <div className="space-y-3 text-slate-700 text-base">
-              <p className="flex items-center gap-2"><span className="text-cyan-500 font-bold">✓</span> Professionisti certificati e autorizzati</p>
-              <p className="flex items-center gap-2"><span className="text-cyan-500 font-bold">✓</span> Interventi rapidi e affidabili</p>
-              <p className="flex items-center gap-2"><span className="text-cyan-500 font-bold">✓</span> Garanzia e assistenza continuativa</p>
-              <p className="flex items-center gap-2"><span className="text-cyan-500 font-bold">✓</span> Serviamo tutta la provincia di Bari</p>
-            </div>
-          </div>
-        </article>
-
         {/* ── DOVE SIAMO — solo mobile ─────────────────────── */}
         <div className="md:hidden bg-slate-800 px-6 py-10">
           <h2 className="text-xl font-bold text-white mb-6 text-center">Dove siamo</h2>
