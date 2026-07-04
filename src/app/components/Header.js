@@ -73,13 +73,13 @@ export default function Header() {
           />
 
           {/* Navigazione */}
-          <nav className="flex items-center justify-center">
+          <nav className="flex items-center justify-center gap-8">
             <Link href="/" aria-label="Home" className="px-3 py-2 text-white hover:text-white/70 transition">
               <FaHome className="text-lg" />
             </Link>
+            <div className="w-px h-6 bg-white/40" />
             <a href="/chi-siamo" className={navLinkClass(isChiSiamo)}>Chi siamo</a>
-            <a href="/contatti" className={navLinkClass(false)}>I nostri contatti</a>
-
+            <div className="w-px h-6 bg-white/40" />
             {/* Dropdown Servizi */}
             <div className="relative group">
               <button className="px-4 py-2 text-sm font-semibold text-white relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-white after:w-0 group-hover:after:w-full after:transition-all after:duration-300 transition">
@@ -89,32 +89,11 @@ export default function Header() {
               {/* Livello 1 */}
               <div className="absolute left-0 mt-3 w-52 bg-blue-500 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 -translate-y-2 group-hover:translate-y-0 shadow-xl rounded-b-lg">
                 <div className="py-2">
-
-                  {/* Assistenza — con sottomenu */}
-                  <div className="relative group/assistenza">
-                    <div className="flex items-center justify-between px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition cursor-default">
-                      <span>Assistenza</span>
-                      <FaChevronRight className="text-[10px] opacity-70" />
-                    </div>
-
-                    {/* Livello 2 */}
-                    <div className="absolute left-full top-0 w-52 bg-blue-600 opacity-0 invisible group-hover/assistenza:opacity-100 group-hover/assistenza:visible transition-all duration-200 shadow-xl rounded-r-lg rounded-bl-lg">
-                      <div className="py-2">
-                        <Link href="/assistenza?cat=caldaie#catalogo"        className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition" rel="nofollow">Caldaie</Link>
-                        <Link href="/assistenza?cat=scaldabagni#catalogo"    className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition" rel="nofollow">Scaldabagni</Link>
-                        <Link href="/assistenza?cat=pompe#catalogo"          className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition" rel="nofollow">Pompe di calore</Link>
-                        <Link href="/assistenza?cat=climatizzatori#catalogo" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition" rel="nofollow">Climatizzatori</Link>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Impianti idrici */}
+                  <Link href="/assistenza" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Assistenza</Link>
                   <Link href="/impianti-idrici" className="block px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition">Impianti idrici e fognari</Link>
                 </div>
               </div>
             </div>
-
-            <a href="/recensioni" className={navLinkClass(false)}>Lascia una recensione</a>
           </nav>
 
           {/* Social */}
@@ -148,42 +127,22 @@ export default function Header() {
             >
               Chi siamo
             </a>
-            <a href="/contatti" className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 border-b border-slate-100 transition" onClick={closeMobile}>
+            {/* <a href="/contatti" className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 border-b border-slate-100 transition" onClick={closeMobile}>
               I nostri contatti
-            </a>
+            </a> */}
 
             {/* Servizi mobile */}
             <div className="border-b border-slate-100">
               <p className="py-2.5 text-sm font-medium text-slate-700">Servizi</p>
               <div className="pl-4 flex flex-col gap-1 pb-2 border-l-2 border-cyan-300">
-
-                {/* Assistenza con sub-toggle */}
-                <div>
-                  <button
-                    onClick={() => setIsMobileAssistenzaOpen(!isMobileAssistenzaOpen)}
-                    className="w-full flex items-center justify-between py-1.5 text-xs font-medium text-slate-600 hover:text-cyan-600 transition"
-                  >
-                    <span>Assistenza</span>
-                    <FaChevronRight className={`text-[10px] transition-transform duration-200 ${isMobileAssistenzaOpen ? 'rotate-90' : ''}`} />
-                  </button>
-
-                  {isMobileAssistenzaOpen && (
-                    <div className="pl-3 flex flex-col gap-0.5 pb-1 border-l border-cyan-200 ml-1 mt-0.5">
-                      <Link href="/assistenza?cat=caldaie#catalogo"        className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile} rel="nofollow">Caldaie</Link>
-                      <Link href="/assistenza?cat=scaldabagni#catalogo"    className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile} rel="nofollow">Scaldabagni</Link>
-                      <Link href="/assistenza?cat=pompe#catalogo"          className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile} rel="nofollow">Pompe di calore</Link>
-                      <Link href="/assistenza?cat=climatizzatori#catalogo" className="py-1.5 text-xs text-slate-500 hover:text-cyan-600 transition" onClick={closeMobile} rel="nofollow">Climatizzatori</Link>
-                    </div>
-                  )}
-                </div>
-
-                <Link href="/impianti-idrici" className="py-1 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={closeMobile}>Impianti idrici e fognari</Link>
+                <Link href="/assistenza" className="py-1.5 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={closeMobile}>Assistenza</Link>
+                <Link href="/impianti-idrici" className="py-1.5 text-xs font-medium text-slate-600 hover:text-cyan-600 transition" onClick={closeMobile}>Impianti idrici e fognari</Link>
               </div>
             </div>
 
-            <a href="/recensioni" className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 transition" onClick={closeMobile}>
+            {/* <a href="/recensioni" className="py-2.5 text-sm font-medium text-slate-700 hover:text-cyan-600 transition" onClick={closeMobile}>
               Lascia una recensione
-            </a>
+            </a> */}
           </nav>
         </div>
       )}

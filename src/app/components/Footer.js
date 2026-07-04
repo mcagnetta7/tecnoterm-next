@@ -27,8 +27,6 @@ export default function Footer() {
             <li><Link href="/chi-siamo" className="hover:text-cyan-400 transition">Chi siamo</Link></li>
             <li><Link href="/assistenza" className="hover:text-cyan-400 transition">Assistenza tecnica</Link></li>
             <li><Link href="/impianti-idrici" className="hover:text-cyan-400 transition">Impianti idrici e fognari</Link></li>
-            <li><Link href="/recensioni" className="hover:text-cyan-400 transition">Recensioni</Link></li>
-            <li><Link href="/contatti" className="hover:text-cyan-400 transition">Contatti</Link></li>
           </ul>
         </div>
 

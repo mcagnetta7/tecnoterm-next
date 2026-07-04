@@ -433,6 +433,11 @@ export default function AssistenzaPage() {
           </div>
         </section>
 
+        {/* Catalogo + filtri (legge ?cat=) */}
+        <Suspense fallback={null}>
+          <AssistenzaContent />
+        </Suspense>
+
         {/* Certificazioni */}
         <section className="py-14 bg-slate-50 border-b border-slate-200">
           <div className="max-w-5xl mx-auto px-6">
@@ -484,11 +489,6 @@ export default function AssistenzaPage() {
             </div>
           </div>
         </section>
-
-        {/* Catalogo + filtri (legge ?cat=) */}
-        <Suspense fallback={null}>
-          <AssistenzaContent />
-        </Suspense>
 
         {/* FAQ */}
         <section className="py-16 md:py-24 bg-white">

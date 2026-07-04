@@ -29,18 +29,4 @@
     <priority>0.9</priority>
   </url>
 
-  <url>
-    <loc>https://tecnoterm-molfetta.it/contatti</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://tecnoterm-molfetta.it/recensioni</loc>
-    <lastmod>2026-05-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
 </urlset>

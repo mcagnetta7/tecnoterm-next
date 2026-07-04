@@ -1,8 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Link from 'next/link';
 import Image from 'next/image';
-import { FaHeart, FaShieldAlt, FaWrench, FaUsers, FaCheckCircle, FaPhoneAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaHeart, FaShieldAlt, FaWrench, FaUsers, FaCheckCircle } from 'react-icons/fa';
 
 export const metadata = {
   title: 'Chi Siamo Tecnoterm | Esperti Caldaie Molfetta dal 1999',
@@ -28,7 +27,7 @@ export default function ChiSiamoPage() {
         </section>
 
         {/* Introduzione */}
-        <section className="py-16 md:py-24 bg-white">
+        <section className="py-10 md:py-14 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
               Da decenni il nostro nome è legato al mondo degli impianti termici, idrici e della
@@ -171,57 +170,7 @@ export default function ChiSiamoPage() {
           </div>
         </section>
 
-        {/* Dove siamo */}
-        <section className="py-16 md:py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-10 text-center">
-              Dove siamo?
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-              {/* Info */}
-              <div className="bg-slate-800 rounded-xl p-8 shadow-lg flex flex-col gap-6">
-                <div className="flex items-start gap-4">
-                  <FaMapMarkerAlt className="text-red-400 text-xl mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-white font-semibold mb-1">Indirizzo</p>
-                    <p className="text-gray-300 text-sm">Piazza Aldo Moro, 3 — 70056 Molfetta (BA)</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <FaClock className="text-yellow-300 text-xl mt-0.5 shrink-0" />
-                  <div>
-                    <p className="text-white font-semibold mb-2">Orari di apertura</p>
-                    <div className="text-gray-300 text-sm space-y-1">
-                      <div className="flex justify-between gap-8">
-                        <span>Lunedì – Sabato</span>
-                        <span className="text-cyan-400 font-medium">9:00 – 12:00</span>
-                      </div>
-                      <div className="flex justify-between gap-8">
-                        <span>Lunedì – Venerdì</span>
-                        <span className="text-cyan-400 font-medium">17:00 – 20:00</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mappa */}
-              <div className="min-h-[280px]">
-                <iframe
-                  src="https://www.google.com/maps?q=Piazza+Aldo+Moro,+3,+70056+Molfetta+BA&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: '280px' }}
-                  allowFullScreen
-                  loading="lazy"
-                  className="rounded-xl shadow-lg w-full h-full"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
 
         {/* Valori */}
@@ -301,27 +250,6 @@ export default function ChiSiamoPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        
-        {/* CTA */}
-        <section className="py-16 md:py-20 bg-slate-50">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <FaPhoneAlt className="text-4xl text-cyan-500 mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-              Vuoi saperne di più?
-            </h2>
-            <p className="text-slate-600 text-lg mb-8">
-              Siamo a tua disposizione per rispondere a qualsiasi domanda e trovare insieme la
-              soluzione migliore per le tue esigenze.
-            </p>
-            <Link
-              href="/contatti"
-              className="inline-block bg-gradient-to-r from-cyan-400 to-cyan-600 hover:from-cyan-300 hover:to-cyan-500 text-white font-semibold px-8 py-3 rounded transition duration-300"
-            >
-              Contattaci
-            </Link>
           </div>
         </section>
       </main>

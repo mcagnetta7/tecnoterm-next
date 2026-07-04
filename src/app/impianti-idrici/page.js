@@ -346,7 +346,7 @@ export default function ImpiantiIdriciPage() {
                 Scrivici su WhatsApp
               </a>
               <Link
-                href="/contatti"
+                href="/#preventivo"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-7 py-3 rounded-full transition duration-300"
               >
                 Richiedi preventivo
