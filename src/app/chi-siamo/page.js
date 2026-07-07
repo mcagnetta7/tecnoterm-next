@@ -125,7 +125,7 @@ export default function ChiSiamoPage() {
               </div>
 
               <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
-                <Image src="/antonio-ciccia.jpeg" alt="Antonio Ciccia – fondatore Tecnoterm Molfetta" fill className="object-cover" />
+                <Image src="/antonio-ciccia.jpeg" alt="Antonio Ciccia – fondatore Tecnoterm Molfetta" fill className="object-cover" style={{ objectPosition: "center 40%" }} />
                 <div className="absolute inset-0 bg-blue-300/10 mix-blend-overlay" />
               </div>
             </div>
